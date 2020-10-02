@@ -1,0 +1,1086 @@
+2020-09-16 11:46:42.595 [restartedMain] WARN  org.springframework.boot.StartupInfoLogger -
+                InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-09-16 11:46:47.624 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on MacBook-Pro.local with PID 2893 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-09-16 11:46:47.629 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-09-16 11:46:48.142 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 11:46:48.143 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 11:46:51.674 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.680 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-09-16 11:46:51.720 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 32ms. Found 0 Elasticsearch repository interfaces.
+2020-09-16 11:46:51.727 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.729 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-09-16 11:46:51.733 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-09-16 11:46:51.754 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.755 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 11:46:51.768 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2020-09-16 11:46:51.815 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.815 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-09-16 11:46:51.821 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 5ms. Found 0 Reactive MongoDB repository interfaces.
+2020-09-16 11:46:51.831 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.831 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-09-16 11:46:51.835 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 MongoDB repository interfaces.
+2020-09-16 11:46:51.861 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:46:51.864 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-16 11:46:51.893 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-09-16 11:46:53.203 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-09-16 11:46:53.218 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-09-16 11:46:53.219 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-09-16 11:46:53.219 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 11:46:53.347 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-09-16 11:46:53.347 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 5204 ms
+2020-09-16 11:46:53.716 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 11:46:53.727 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-09-16 11:46:54.255 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-09-16 11:46:54.314 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 11:46:54.403 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-16 11:46:54.613 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 11:46:54.700 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 11:46:55.034 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-09-16 11:46:55.423 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 11:46:55.443 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 11:46:56.296 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:56.296 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:56.296 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:56.296 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:56.425 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-09-16 11:46:56.425 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-09-16 11:46:56.425 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-09-16 11:46:56.616 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 11:46:57.160 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:57.203 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:46:57.373 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 11:46:57.646 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-09-16 11:46:57.755 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-09-16 11:46:57.798 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-09-16 11:46:57.803 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-09-16 11:46:57.804 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-09-16 11:46:57.829 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 30.811 seconds (JVM running for 36.711)
+2020-09-16 11:47:02.216 [cluster-ClusterId{value='5f618ab0b080512dd457b9dc', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 11:47:02.216 [cluster-ClusterId{value='5f618ab1b080512dd457b9dd', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 11:50:38.991 [http-nio-8070-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-16 11:50:38.994 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Initializing Servlet 'dispatcherServlet'
+2020-09-16 11:50:39.052 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Completed initialization in 58 ms
+2020-09-16 11:50:39.465 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-16 11:55:02.230 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 11:55:02.257 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-16 11:55:02.267 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-09-16 11:55:02.299 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.
+2020-09-16 11:55:26.208 [restartedMain] WARN  org.springframework.boot.StartupInfoLogger -
+                InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-09-16 11:55:31.217 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on MacBook-Pro.local with PID 3098 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-09-16 11:55:31.218 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-09-16 11:55:31.260 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 11:55:31.260 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 11:55:31.967 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:31.969 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-09-16 11:55:31.985 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 12ms. Found 0 Elasticsearch repository interfaces.
+2020-09-16 11:55:31.988 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:31.989 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-09-16 11:55:31.992 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-09-16 11:55:31.999 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:31.999 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 11:55:32.006 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 JPA repository interfaces.
+2020-09-16 11:55:32.030 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:32.031 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-09-16 11:55:32.033 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive MongoDB repository interfaces.
+2020-09-16 11:55:32.037 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:32.037 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-09-16 11:55:32.040 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-09-16 11:55:32.050 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 11:55:32.051 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-16 11:55:32.059 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-09-16 11:55:32.617 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-09-16 11:55:32.626 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-09-16 11:55:32.626 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-09-16 11:55:32.627 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 11:55:32.702 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-09-16 11:55:32.703 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 1443 ms
+2020-09-16 11:55:32.938 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 11:55:32.946 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-09-16 11:55:33.417 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-09-16 11:55:33.473 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 11:55:33.528 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-16 11:55:33.698 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 11:55:33.772 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 11:55:33.858 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-09-16 11:55:34.139 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 11:55:34.150 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 11:55:34.732 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:34.732 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:34.733 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:34.733 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:34.803 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-09-16 11:55:34.803 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-09-16 11:55:34.803 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-09-16 11:55:34.876 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 11:55:35.139 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:35.200 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 11:55:35.417 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 11:55:35.732 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-09-16 11:55:35.814 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-09-16 11:55:35.836 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-09-16 11:55:35.839 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-09-16 11:55:35.839 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-09-16 11:55:35.852 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 25.02 seconds (JVM running for 31.007)
+2020-09-16 11:55:40.120 [cluster-ClusterId{value='5f618cb6899645798cd2d235', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 11:55:40.120 [cluster-ClusterId{value='5f618cb7899645798cd2d236', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 11:56:42.634 [http-nio-8070-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-16 11:56:42.642 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Initializing Servlet 'dispatcherServlet'
+2020-09-16 11:56:42.716 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Completed initialization in 73 ms
+2020-09-16 11:56:43.047 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-16 12:51:33.464 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 12:51:33.537 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-16 12:51:33.562 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-09-16 12:51:33.589 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.
+2020-09-16 12:51:58.413 [restartedMain] WARN  org.springframework.boot.StartupInfoLogger -
+                InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-09-16 12:52:03.423 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on MacBook-Pro.local with PID 4183 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-09-16 12:52:03.424 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-09-16 12:52:03.480 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 12:52:03.480 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 12:52:04.347 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.349 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-09-16 12:52:04.372 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 16ms. Found 0 Elasticsearch repository interfaces.
+2020-09-16 12:52:04.377 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.377 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-09-16 12:52:04.380 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-09-16 12:52:04.388 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.389 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 12:52:04.396 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 JPA repository interfaces.
+2020-09-16 12:52:04.425 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.425 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-09-16 12:52:04.428 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive MongoDB repository interfaces.
+2020-09-16 12:52:04.432 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.432 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-09-16 12:52:04.435 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-09-16 12:52:04.448 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:52:04.450 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-16 12:52:04.460 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-09-16 12:52:05.102 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-09-16 12:52:05.114 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-09-16 12:52:05.114 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-09-16 12:52:05.114 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 12:52:05.197 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-09-16 12:52:05.197 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 1717 ms
+2020-09-16 12:52:05.448 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 12:52:05.458 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-09-16 12:52:05.867 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-09-16 12:52:05.916 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 12:52:05.977 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-16 12:52:06.150 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 12:52:06.191 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 12:52:06.338 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-09-16 12:52:06.609 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 12:52:06.623 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 12:52:07.176 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.177 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.177 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.177 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.261 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-09-16 12:52:07.261 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-09-16 12:52:07.261 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-09-16 12:52:07.365 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 12:52:07.627 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.644 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:52:07.717 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 12:52:07.869 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-09-16 12:52:07.941 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-09-16 12:52:07.960 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-09-16 12:52:07.963 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-09-16 12:52:07.964 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-09-16 12:52:07.976 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 25.04 seconds (JVM running for 31.176)
+2020-09-16 12:52:12.631 [cluster-ClusterId{value='5f6199f7edad62787adc9867', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 12:52:12.631 [cluster-ClusterId{value='5f6199f7edad62787adc9866', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 12:58:22.671 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 12:58:22.693 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-16 12:58:22.697 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-09-16 12:58:22.709 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.
+2020-09-16 12:58:46.255 [restartedMain] WARN  org.springframework.boot.StartupInfoLogger -
+                InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-09-16 12:58:51.264 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on MacBook-Pro.local with PID 4346 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-09-16 12:58:51.265 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-09-16 12:58:51.310 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 12:58:51.310 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 12:58:52.003 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.004 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-09-16 12:58:52.023 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 15ms. Found 0 Elasticsearch repository interfaces.
+2020-09-16 12:58:52.027 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.027 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-09-16 12:58:52.030 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-09-16 12:58:52.037 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.037 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 12:58:52.043 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 JPA repository interfaces.
+2020-09-16 12:58:52.067 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.067 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-09-16 12:58:52.070 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive MongoDB repository interfaces.
+2020-09-16 12:58:52.073 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.073 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-09-16 12:58:52.075 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-09-16 12:58:52.085 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 12:58:52.086 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-16 12:58:52.094 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-09-16 12:58:52.615 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-09-16 12:58:52.623 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-09-16 12:58:52.624 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-09-16 12:58:52.624 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 12:58:52.700 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-09-16 12:58:52.700 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 1390 ms
+2020-09-16 12:58:52.920 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 12:58:52.930 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-09-16 12:58:53.232 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-09-16 12:58:53.268 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 12:58:53.306 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-16 12:58:53.432 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 12:58:53.440 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 12:58:53.599 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-09-16 12:58:53.813 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 12:58:53.824 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 12:58:54.276 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.276 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.277 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.277 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.339 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-09-16 12:58:54.339 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-09-16 12:58:54.339 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-09-16 12:58:54.408 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 12:58:54.631 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.645 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 12:58:54.701 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 12:58:54.822 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-09-16 12:58:54.891 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-09-16 12:58:54.909 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-09-16 12:58:54.913 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-09-16 12:58:54.914 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-09-16 12:58:54.924 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 24.021 seconds (JVM running for 29.741)
+2020-09-16 12:58:59.641 [cluster-ClusterId{value='5f619b8eaffe5a7d6378bea1', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 12:58:59.641 [cluster-ClusterId{value='5f619b8eaffe5a7d6378bea2', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 13:02:54.573 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 13:02:54.597 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-16 13:02:54.603 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-09-16 13:02:54.619 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.
+2020-09-16 13:03:17.845 [restartedMain] WARN  org.springframework.boot.StartupInfoLogger -
+                InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-09-16 13:03:22.852 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on MacBook-Pro.local with PID 4433 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-09-16 13:03:22.853 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-09-16 13:03:22.901 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 13:03:22.901 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 13:03:23.694 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.695 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-09-16 13:03:23.712 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 13ms. Found 0 Elasticsearch repository interfaces.
+2020-09-16 13:03:23.716 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.717 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-09-16 13:03:23.719 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-09-16 13:03:23.726 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.726 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 13:03:23.733 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 JPA repository interfaces.
+2020-09-16 13:03:23.759 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.759 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-09-16 13:03:23.762 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive MongoDB repository interfaces.
+2020-09-16 13:03:23.765 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.766 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-09-16 13:03:23.768 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-09-16 13:03:23.779 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-16 13:03:23.780 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-16 13:03:23.788 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-09-16 13:03:24.383 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-09-16 13:03:24.391 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-09-16 13:03:24.391 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-09-16 13:03:24.392 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 13:03:24.469 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-09-16 13:03:24.469 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 1568 ms
+2020-09-16 13:03:24.690 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 13:03:24.697 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-09-16 13:03:25.001 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-09-16 13:03:25.038 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 13:03:25.077 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-16 13:03:25.208 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 13:03:25.217 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 13:03:25.345 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-09-16 13:03:25.546 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 13:03:25.556 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 13:03:26.012 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.012 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.012 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.013 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.074 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-09-16 13:03:26.074 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-09-16 13:03:26.074 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-09-16 13:03:26.146 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 13:03:26.362 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.376 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-09-16 13:03:26.430 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-09-16 13:03:26.554 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-09-16 13:03:26.618 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-09-16 13:03:26.638 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-09-16 13:03:26.640 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-09-16 13:03:26.641 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-09-16 13:03:26.651 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 24.148 seconds (JVM running for 30.01)
+2020-09-16 13:03:31.370 [cluster-ClusterId{value='5f619c9ea6ae6c64e276f0d5', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 13:03:31.370 [cluster-ClusterId{value='5f619c9ea6ae6c64e276f0d4', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-16 13:03:40.281 [http-nio-8070-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-16 13:03:40.282 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Initializing Servlet 'dispatcherServlet'
+2020-09-16 13:03:40.292 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Completed initialization in 10 ms
+2020-09-16 13:03:40.481 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-16 18:16:52.017 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m53s644ms).
+2020-09-16 18:50:52.551 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m644ms).
+2020-09-16 19:12:34.109 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m40s339ms).
+2020-09-16 19:27:44.304 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m40s172ms).
+2020-09-16 19:42:24.470 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m40s167ms).
+2020-09-16 19:49:39.970 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m15s500ms).
+2020-09-16 21:40:18.830 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h50m8s826ms).
+2020-09-16 23:28:31.757 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h48m12s949ms).
+2020-09-17 03:04:38.185 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h36m6s428ms).
+2020-09-17 04:52:52.165 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m43s964ms).
+2020-09-17 06:16:15.653 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m11s862ms).
+2020-09-17 08:53:46.834 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h37m401ms).
+2020-09-17 14:18:12.765 [http-nio-8070-exec-7] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:18:16.725 [http-nio-8070-exec-8] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:18:55.585 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:19:37.185 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:19:37.208 [http-nio-8070-exec-2] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:19:41.261 [http-nio-8070-exec-3] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:19.613 [http-nio-8070-exec-5] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:20.542 [http-nio-8070-exec-4] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:20.727 [http-nio-8070-exec-6] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:20.883 [http-nio-8070-exec-7] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:21.043 [http-nio-8070-exec-8] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:54:26.541 [http-nio-8070-exec-10] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:55:04.704 [http-nio-8070-exec-2] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 14:55:07.043 [http-nio-8070-exec-3] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:01:56.317 [http-nio-8070-exec-7] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:09:42.803 [http-nio-8070-exec-10] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:09:54.282 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:10:11.279 [http-nio-8070-exec-2] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:10:14.234 [http-nio-8070-exec-3] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:13:47.483 [http-nio-8070-exec-4] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:18:04.615 [http-nio-8070-exec-6] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:18:31.926 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:29:44.755 [http-nio-8070-exec-10] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:29:53.249 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:29:58.063 [http-nio-8070-exec-2] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:41:59.553 [http-nio-8070-exec-3] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:47:34.951 [http-nio-8070-exec-5] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:47:48.217 [http-nio-8070-exec-4] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:50:21.188 [http-nio-8070-exec-6] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:56:00.009 [http-nio-8070-exec-7] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:58:13.734 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:58:17.142 [http-nio-8070-exec-8] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:58:20.055 [http-nio-8070-exec-10] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 15:58:24.577 [http-nio-8070-exec-1] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='null', content='TESTCONTENT'}
+2020-09-17 16:00:09.342 [http-nio-8070-exec-2] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='TESTTITLE', content='TESTCONTENT'}
+2020-09-17 16:01:38.922 [http-nio-8070-exec-3] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='TESTTITLE', content='TESTCONTENT'}
+2020-09-17 16:01:39.792 [http-nio-8070-exec-5] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='TESTTITLE', content='TESTCONTENT'}
+2020-09-17 16:01:50.074 [http-nio-8070-exec-4] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='TESTTITLE', content='TESTCONTENT'}
+2020-09-17 16:02:35.032 [http-nio-8070-exec-6] INFO  com.example.forum.controller.TieController -
+                getTie param:int id=1 return tie:Tie{id=1, createTime=2020-09-16 01:10:24.0, createUserId=1, title='TESTTITLE', content='TESTCONTENT'}
+2020-09-17 16:35:48.879 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-17 16:35:49.055 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-17 16:35:49.099 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-09-17 16:35:49.211 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.

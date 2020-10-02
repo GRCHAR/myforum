@@ -1,0 +1,380 @@
+2020-10-01 10:44:49.888 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Starting ForumApplication on bogon with PID 72531 (/Users/project/forum/target/classes started by genghaoran in /Users/project/forum)
+2020-10-01 10:44:49.892 [restartedMain] INFO  com.example.forum.ForumApplication -
+                No active profile set, falling back to default profiles: default
+2020-10-01 10:44:49.969 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 10:44:49.969 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor -
+                For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 10:44:50.925 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:50.927 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-10-01 10:44:50.960 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 26ms. Found 0 Elasticsearch repository interfaces.
+2020-10-01 10:44:50.964 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:50.965 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-10-01 10:44:50.969 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-10-01 10:44:50.978 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:50.978 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 10:44:50.988 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 4ms. Found 0 JPA repository interfaces.
+2020-10-01 10:44:51.038 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:51.039 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-10-01 10:44:51.042 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 3ms. Found 0 Reactive MongoDB repository interfaces.
+2020-10-01 10:44:51.048 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:51.048 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-10-01 10:44:51.053 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 4ms. Found 0 MongoDB repository interfaces.
+2020-10-01 10:44:51.072 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 10:44:51.073 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 10:44:51.089 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+                Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 10:44:51.780 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat initialized with port(s): 8070 (http)
+2020-10-01 10:44:51.792 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Initializing ProtocolHandler ["http-nio-8070"]
+2020-10-01 10:44:51.793 [restartedMain] INFO  org.apache.catalina.core.StandardService -
+                Starting service [Tomcat]
+2020-10-01 10:44:51.793 [restartedMain] INFO  org.apache.catalina.core.StandardEngine -
+                Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 10:44:51.878 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring embedded WebApplicationContext
+2020-10-01 10:44:51.878 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+                Root WebApplicationContext: initialization completed in 1909 ms
+2020-10-01 10:44:52.126 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 10:44:52.137 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Starting...
+2020-10-01 10:44:52.572 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Start completed.
+2020-10-01 10:44:52.624 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper -
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 10:44:52.702 [task-1] INFO  org.hibernate.Version -
+                HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 10:44:52.931 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 10:44:52.974 [task-1] INFO  org.hibernate.annotations.common.Version -
+                HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 10:44:53.181 [task-1] INFO  org.hibernate.dialect.Dialect -
+                HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-10-01 10:44:53.484 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator -
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 10:44:53.495 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 10:44:54.243 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.244 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.244 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.244 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.342 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Spring Data Elasticsearch: 4.0.3.RELEASE
+2020-10-01 10:44:54.342 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client in build: 7.6.2
+2020-10-01 10:44:54.342 [restartedMain] INFO  o.s.data.elasticsearch.support.VersionInfo -
+                Version Elasticsearch Client used: 7.6.2
+2020-10-01 10:44:54.481 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-10-01 10:44:54.786 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.788 [cluster-ClusterId{value='5f7542a67826a2503c8ba2fc', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-10-01 10:44:54.807 [restartedMain] WARN  org.springframework.data.convert.CustomConversions -
+                Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2020-10-01 10:44:54.892 [restartedMain] INFO  org.mongodb.driver.cluster -
+                Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-10-01 10:44:54.900 [cluster-ClusterId{value='5f7542a67826a2503c8ba2fd', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster -
+                Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:416)
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:384)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/0:0:0:0:0:0:0:1:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-10-01 10:44:55.089 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer -
+                LiveReload server is running on port 35729
+2020-10-01 10:44:55.172 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol -
+                Starting ProtocolHandler ["http-nio-8070"]
+2020-10-01 10:44:55.191 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+                Tomcat started on port(s): 8070 (http) with context path ''
+2020-10-01 10:44:55.193 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Triggering deferred initialization of Spring Data repositories…
+2020-10-01 10:44:55.194 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener -
+                Spring Data repositories initialized!
+2020-10-01 10:44:55.208 [restartedMain] INFO  com.example.forum.ForumApplication -
+                Started ForumApplication in 5.821 seconds (JVM running for 6.865)
+2020-10-01 10:47:53.231 [http-nio-8070-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 10:47:53.232 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Initializing Servlet 'dispatcherServlet'
+2020-10-01 10:47:53.257 [http-nio-8070-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+                Completed initialization in 25 ms
+2020-10-01 10:47:53.491 [http-nio-8070-exec-1] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 10:48:25.816 [http-nio-8070-exec-3] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST
+2020-10-01 10:48:25.824 [http-nio-8070-exec-3] INFO  com.example.forum.controller.UserController -
+                login, String name:TEST1 password:TEST
+2020-10-01 10:48:51.163 [http-nio-8070-exec-5] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:SAF
+2020-10-01 10:48:51.170 [http-nio-8070-exec-5] INFO  com.example.forum.controller.UserController -
+                login, String name:TEST1 password:SAF
+2020-10-01 10:53:42.695 [http-nio-8070-exec-7] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST
+2020-10-01 10:53:42.702 [http-nio-8070-exec-7] INFO  com.example.forum.controller.UserController -
+                login, String name:TEST1 password:TEST
+2020-10-01 11:00:15.972 [http-nio-8070-exec-10] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:06:35.948 [http-nio-8070-exec-2] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:Test password:tset
+2020-10-01 11:06:35.965 [http-nio-8070-exec-2] INFO  com.example.forum.controller.UserController -
+                login, String name:Test password:tset
+2020-10-01 11:19:09.722 [http-nio-8070-exec-3] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:19:52.992 [http-nio-8070-exec-6] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:20:27.283 [http-nio-8070-exec-9] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:tst1
+2020-10-01 11:20:27.291 [http-nio-8070-exec-9] INFO  com.example.forum.controller.UserController -
+                login, String name:TEST1 password:tst1
+2020-10-01 11:20:36.261 [http-nio-8070-exec-10] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:test1
+2020-10-01 11:22:07.812 [http-nio-8070-exec-2] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:22:19.463 [http-nio-8070-exec-4] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:24:37.693 [http-nio-8070-exec-7] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 11:25:43.179 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s235ms).
+2020-10-01 11:57:29.595 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m16s399ms).
+2020-10-01 12:37:27.323 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m57s725ms).
+2020-10-01 13:49:47.075 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m49s751ms).
+2020-10-01 15:37:30.055 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m42s980ms).
+2020-10-01 17:25:42.049 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m41s990ms).
+2020-10-01 17:36:38.803 [http-nio-8070-exec-9] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-01 21:05:27.339 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m32s943ms).
+2020-10-01 23:07:55.606 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h28s235ms).
+2020-10-02 01:10:23.844 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h28s218ms).
+2020-10-02 01:58:06.840 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m12s982ms).
+2020-10-02 02:28:37.000 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m30s161ms).
+2020-10-02 03:49:09.704 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h20m1s962ms).
+2020-10-02 05:37:22.739 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m43s8ms).
+2020-10-02 07:25:35.774 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m43s31ms).
+2020-10-02 09:00:25.798 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h34m20s17ms).
+2020-10-02 09:23:20.267 [http-nio-8070-exec-2] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-02 09:27:29.579 [http-nio-8070-exec-4] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-02 09:40:25.670 [http-nio-8070-exec-8] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver -
+                Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.forum.result.Result<java.lang.Integer> com.example.forum.controller.UserController.loginUser(java.util.HashMap<java.lang.String, java.lang.String>,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession)]
+2020-10-02 09:41:13.435 [http-nio-8070-exec-9] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver -
+                Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------227750121829704875219555;charset=UTF-8' not supported]
+2020-10-02 09:41:50.808 [http-nio-8070-exec-10] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver -
+                Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2020-10-02 09:43:08.268 [http-nio-8070-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver -
+                Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+2020-10-02 09:45:33.058 [http-nio-8070-exec-3] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:test1
+2020-10-02 09:48:26.358 [http-nio-8070-exec-5] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver -
+                Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-10-02 09:57:57.312 [http-nio-8070-exec-3] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-02 10:01:05.894 [http-nio-8070-exec-7] INFO  com.example.forum.service.impl.UserServiceImpl -
+                login, String name:TEST1 password:TEST1
+2020-10-02 10:01:45.091 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-18 16:18:26.0
+2020-10-02 10:01:45.100 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-18 10:42:38.0
+2020-10-02 10:01:45.107 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:38:25.0
+2020-10-02 10:01:45.110 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:51:32.0
+2020-10-02 10:01:45.113 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:52:05.0
+2020-10-02 10:01:45.116 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:56:49.0
+2020-10-02 10:01:45.119 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:57:06.0
+2020-10-02 10:01:45.123 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 15:57:52.0
+2020-10-02 10:01:45.126 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:01:43.0
+2020-10-02 10:01:45.129 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:03:19.0
+2020-10-02 10:01:45.132 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:08:27.0
+2020-10-02 10:01:45.134 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:10:10.0
+2020-10-02 10:01:45.139 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:10:54.0
+2020-10-02 10:01:45.143 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:12:04.0
+2020-10-02 10:01:45.145 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:13:54.0
+2020-10-02 10:01:45.149 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:14:54.0
+2020-10-02 10:01:45.153 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-25 16:17:15.0
+2020-10-02 10:01:45.156 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 15:45:14.0
+2020-10-02 10:01:45.158 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 15:45:34.0
+2020-10-02 10:01:45.161 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 15:48:51.0
+2020-10-02 10:01:45.164 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 15:51:04.0
+2020-10-02 10:01:45.167 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:13:47.0
+2020-10-02 10:01:45.170 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:22:16.0
+2020-10-02 10:01:45.173 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:22:23.0
+2020-10-02 10:01:45.175 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:25:18.0
+2020-10-02 10:01:45.177 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:25:53.0
+2020-10-02 10:01:45.180 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:26:10.0
+2020-10-02 10:01:45.182 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:26:55.0
+2020-10-02 10:01:45.185 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:30:00.0
+2020-10-02 10:01:45.187 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:31:54.0
+2020-10-02 10:01:45.189 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:32:20.0
+2020-10-02 10:01:45.192 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:32:35.0
+2020-10-02 10:01:45.194 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:32:52.0
+2020-10-02 10:01:45.196 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:38:16.0
+2020-10-02 10:01:45.200 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 16:38:52.0
+2020-10-02 10:01:45.203 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:11:30.0
+2020-10-02 10:01:45.206 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:11:32.0
+2020-10-02 10:01:45.209 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:12:12.0
+2020-10-02 10:01:45.211 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:13:35.0
+2020-10-02 10:01:45.213 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:13:39.0
+2020-10-02 10:01:45.217 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:14:07.0
+2020-10-02 10:01:45.219 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:15:27.0
+2020-10-02 10:01:45.221 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:16:16.0
+2020-10-02 10:01:45.224 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:19:33.0
+2020-10-02 10:01:45.227 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 17:26:18.0
+2020-10-02 10:01:45.229 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-29 18:02:19.0
+2020-10-02 10:01:45.231 [http-nio-8070-exec-9] INFO  com.example.forum.controller.TieController -
+                createTime:2020-09-30 16:03:51.0
+2020-10-02 10:39:51.995 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m25s618ms).
+2020-10-02 11:59:53.072 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m31s63ms).
+2020-10-02 12:35:18.504 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m25s432ms).
+2020-10-02 14:31:18.279 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h55m29s25ms).
+2020-10-02 15:46:47.579 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
+                HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h14m59s268ms).
