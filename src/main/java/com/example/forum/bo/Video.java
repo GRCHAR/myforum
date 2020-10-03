@@ -16,6 +16,12 @@ public class Video {
         this.url = url;
     }
 
+    public Video(String title, int userId){
+        this.title = title;
+        this.userId = userId;
+        this.url = null;
+    }
+
     public int getId() {
         return id;
     }
@@ -46,5 +52,15 @@ public class Video {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", userId=" + userId +
+                ", url='" + url + '\'' +
+                '}';
     }
 }

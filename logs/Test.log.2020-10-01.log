@@ -378,3 +378,11 @@ Caused by: java.net.ConnectException: Connection refused
                 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h55m29s25ms).
 2020-10-02 15:46:47.579 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -
                 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h14m59s268ms).
+2020-10-02 19:33:12.150 [SpringContextShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean -
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-02 19:33:12.226 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+                Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-02 19:33:12.240 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown initiated...
+2020-10-02 19:33:12.256 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -
+                HikariPool-1 - Shutdown completed.
