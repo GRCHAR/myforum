@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 
 /**
  * @author genghaoran
@@ -28,5 +30,10 @@ public interface VideoDao {
     @Select("SELECT * FROM video WHERE id=#{id}")
     public Video getVideo(int id);
 
-
+    /**
+     * 获取所有分页视频
+     * @return
+     */
+    @Select("SELECT * FROM video")
+    public List<Video> getVideoPages();
 }

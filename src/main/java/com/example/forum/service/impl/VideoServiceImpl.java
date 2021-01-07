@@ -6,10 +6,12 @@ import com.example.forum.service.IVideoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author genghaoran
  */
+@Service
 public class VideoServiceImpl implements IVideoService {
 
     @Autowired
@@ -29,4 +31,6 @@ public class VideoServiceImpl implements IVideoService {
         logger.info("getVideo: int id:" + id);
         return videoDao.getVideo(id);
     }
+
+
 }

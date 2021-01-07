@@ -1,14 +1,13 @@
 package com.example.forum.controller;
 
 import com.example.forum.bo.Video;
+import com.example.forum.result.Result;
+import com.example.forum.result.ResultCodeMessage;
 import com.example.forum.service.IVideoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
@@ -38,5 +37,18 @@ public class VideoController {
 
         return videoId;
     }
+
+    public Result<Video> getVideoInfo(@RequestParam int videoId){
+        Video video = new Video();
+        try{
+            video = videoService.getVideo(videoId);
+        }catch (Exception e){
+            logger.error("getVideoInfo videoId:" + videoId);
+            return Result.failure(ResultCodeMessage.SERVER_ERROR);
+        }
+       return Result.success(ResultCodeMessage.SUCCESS, video);
+    }
+
+
 
 }

@@ -9,6 +9,13 @@ public class Video {
     private int userId;
     private String url;
 
+    public Video(){
+        this.id = 0;
+        this.title = null;
+        this.userId = 0;
+        this.url = null;
+    }
+
     public Video(int id, String title, int userId, String url) {
         this.id = id;
         this.title = title;
