@@ -53,9 +53,10 @@ public class UserController {
         try{
             userId = userService.register(name, password);
         }catch (Exception e){
-            logger.info("registerUser, String name:" + name + " password:" + password + " exception:" + e.getMessage());
+            logger.error("registerUser error, String name:" + name + " password:" + password + " exception:" + e.getMessage());
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
+        logger.info("registerUser, String name:" + name + " password:" + password);
         session.setAttribute("userId", userId);
         Cookie cookie = new Cookie("userId", String.valueOf(userId));
         cookie.setMaxAge(30 * 60);
@@ -75,7 +76,8 @@ public class UserController {
         try{
             userId = userService.login(name, password);
         }catch (Exception e){
-            logger.info("login, String name:" + name + " password:" + password);
+            e.printStackTrace();
+            logger.info("login, String name:" + name + " password:" + password + " " +  e.getMessage());
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
         session.setAttribute("userId", userId);
@@ -86,7 +88,7 @@ public class UserController {
         return Result.success(userId);
     }
 
-    @RequestMapping(value = "/getcomments", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/getComments", method = RequestMethod.GET, produces = "application/json")
     public Result<List<Comment>> getUserComments(@RequestParam int userId){
         List<Comment> comments = new ArrayList<>();
         try{
@@ -107,6 +109,14 @@ public class UserController {
             logger.info("UserController: getUser: int userId " + e.getMessage());
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
+        return success(user);
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET, produces = "application/json")
+    public Result<User> logoutUser(HttpServletResponse response, HttpSession session){
+        User user = new User();
+        session.removeAttribute("userId");
+        session.invalidate();
         return success(user);
     }
 

@@ -1,7 +1,9 @@
 package com.example.forum.service;
 
 import com.example.forum.bo.Tie;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import sun.jvm.hotspot.debugger.Page;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -31,4 +33,12 @@ public interface ITieService {
      * @return 全部帖子列表
      */
     public List<Tie> getTies();
+
+    /**
+     * 获取贴子分液数据
+     * @param pageIndex 页码
+     * @param pageSize 分页尺寸
+     * @return 当前页数据
+     */
+    public PageInfo<Tie> getPageTie(int pageIndex, int pageSize);
 }

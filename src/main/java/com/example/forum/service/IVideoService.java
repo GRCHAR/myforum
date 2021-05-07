@@ -2,6 +2,9 @@ package com.example.forum.service;
 
 
 import com.example.forum.bo.Video;
+import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * @author genghaoran
@@ -22,4 +25,12 @@ public interface IVideoService {
      * @return 视频对象
      */
     public Video getVideo(int id);
+
+    /**
+     * 获取视频分页信息
+     * @param pageIndex 页码
+     * @param pageSize 页尺寸
+     * @return 当前页数据
+     */
+    public PageInfo<Video> selectPageVideo(int pageIndex, int pageSize);
 }

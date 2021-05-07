@@ -13,6 +13,7 @@ import com.example.forum.service.ICsCommentService;
 import com.example.forum.service.ITieService;
 import com.example.forum.service.IUserService;
 import com.example.forum.vo.CommentVo;
+import com.github.pagehelper.PageInfo;
 import org.elasticsearch.common.recycler.Recycler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -107,6 +108,19 @@ public class TieController {
         return Result.success(ties);
     }
 
+    public Result<List<Tie>> getPageTie(@RequestParam int pageIndex, @RequestParam int pageSize){
+        PageInfo<Tie> tiePageInfo;
+        try{
+            tiePageInfo = tieService.getPageTie(pageIndex, pageSize);
+        } catch (Exception e){
+            logger.error("getPageTie " + e.getMessage());
+            return Result.failure(ResultCodeMessage.SERVER_ERROR);
+        }
+        return Result.success(tiePageInfo.getList());
+    }
+
+
+
     @RequestMapping(method = RequestMethod.GET, value = "/getCsComments", produces = "application/json")
     public Result<List<CsComment>> getCsComment(@RequestParam int commentId){
         List<CsComment> csComments = new ArrayList<>();
@@ -138,4 +152,8 @@ public class TieController {
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);
     }
+
+
+
+
 }

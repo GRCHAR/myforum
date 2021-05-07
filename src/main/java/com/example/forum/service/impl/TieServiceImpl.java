@@ -4,6 +4,9 @@ import com.example.forum.bo.Tie;
 import com.example.forum.controller.TieController;
 import com.example.forum.dao.TieDao;
 import com.example.forum.service.ITieService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,7 @@ public class TieServiceImpl implements ITieService {
     @Autowired
     private TieDao tieDao;
 
-    private Logger logger = LoggerFactory.getLogger(TieServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(TieServiceImpl.class);
 
     @Override
     public int createTie(String content, int createUserId, Timestamp createTime) {
@@ -59,6 +62,14 @@ public class TieServiceImpl implements ITieService {
         }
         return ties;
     }
+
+    @Override
+    public PageInfo<Tie> getPageTie(int pageIndex, int pageSize){
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Tie> ties = tieDao.getAllTie();
+        return new PageInfo<Tie>(ties);
+    }
+
 
 
 }

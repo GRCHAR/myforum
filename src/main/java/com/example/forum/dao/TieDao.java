@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author genghaoran
  */
+
 public interface TieDao {
 
     /**

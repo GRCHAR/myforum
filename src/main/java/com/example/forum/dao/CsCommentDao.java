@@ -18,4 +18,6 @@ public interface CsCommentDao {
      */
     @Select("SELECT * FROM cscomment WHERE commentId=#{commentId}")
     public List<CsComment> findAllCsComment(int commentId);
+
+
 }
