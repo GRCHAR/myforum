@@ -85,13 +85,13 @@ public class LiveController {
         logger.info("getM4s:" + "liveId:" + mpdId);
         try{
             data = liveService.getM4s(mpdId, iniId, chunkId);
-
         }catch (Exception e){
             e.printStackTrace();
             return null;
         }
         return data;
     }
+
 
 
 

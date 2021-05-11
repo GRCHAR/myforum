@@ -1,12 +1,18 @@
 package com.example.forum;
 
+import com.example.forum.queue.Sender;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.SQLSyntaxErrorException;
+import java.util.Date;
 
 @SpringBootTest
 class ForumApplicationTests {
+
+    @Autowired
+    private Sender sender;
 
     @Test
     void contextLoads() {
@@ -20,6 +26,19 @@ class ForumApplicationTests {
             System.out.println(test.charAt(4));
         }
 
+    }
+
+    @Test
+    public void QueueSend(){
+        int i = 2;
+        for(int j = 0;j < i;j++){
+            String msg = "Queue1 msg" + j + new Date();
+            try{
+                sender.send(msg);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
 }
