@@ -64,5 +64,13 @@ public interface UserDao {
             }
             }.toString();
         }
+
+        public String deleteUser(int id){
+            return new SQL(){{
+                DELETE_FROM("user");
+                SET("id = #{id}");
+            }
+            }.toString();
+        }
     }
 }

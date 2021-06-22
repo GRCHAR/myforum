@@ -29,9 +29,9 @@ public class TieServiceImpl implements ITieService {
     private final Logger logger = LoggerFactory.getLogger(TieServiceImpl.class);
 
     @Override
-    public int createTie(String content, int createUserId, Timestamp createTime) {
+    public int createTie(String title, String content, int createUserId, Timestamp createTime) {
         try{
-            tieDao.createTie(content, createTime, createUserId);
+            tieDao.createTie(title, content, createTime, createUserId);
         }catch (Exception e){
             e.printStackTrace();
             return -1;

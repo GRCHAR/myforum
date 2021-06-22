@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.example.forum.result.Result.failure;
 import static com.example.forum.result.Result.success;
 
 /**
@@ -82,7 +83,6 @@ public class UserController {
         }
         session.setAttribute("userId", userId);
         Cookie cookie = new Cookie("userId", String.valueOf(userId));
-        cookie.setMaxAge(30 * 60);
         cookie.setPath("/");
         httpServletResponse.addCookie(cookie);
         return Result.success(userId);
@@ -115,10 +115,30 @@ public class UserController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET, produces = "application/json")
     public Result<User> logoutUser(HttpServletResponse response, HttpSession session){
         User user = new User();
-        session.removeAttribute("userId");
-        session.invalidate();
+        try{
+            session.removeAttribute("userId");
+            session.invalidate();
+        } catch (Exception e){
+            return failure(ResultCodeMessage.SERVER_ERROR);
+        }
         return success(user);
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST, produces = "application/json")
+    public Result<User> setUser(@RequestParam String name,
+                                @RequestParam String password,
+                                HttpSession session){
+        User user = new User();
+        try{
+            int userId = (int) session.getAttribute("userId");
+            userDao.updateUser(userId, name, password);
+            user = userDao.getUser(userId);
+        } catch (Exception e){
+            return failure(ResultCodeMessage.SERVER_ERROR);
+        }
+        return success(user);
+    }
+
 
 
 }

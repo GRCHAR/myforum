@@ -29,8 +29,8 @@ public interface TieDao {
      * @param createTime 创建时间
      * @param createUserId 创建用户
      */
-    @Insert("INSERT INTO tie VALUES(#{createTime}, #{createUserId}, #{content})")
-    void createTie(String content, Timestamp createTime, int createUserId);
+    @Insert("INSERT INTO tie VALUES(#{createTime}, #{createUserId}, #{content}, #{title})")
+    void createTie(String title, String content, Timestamp createTime, int createUserId);
 
     /**
      * 获取所有帖子

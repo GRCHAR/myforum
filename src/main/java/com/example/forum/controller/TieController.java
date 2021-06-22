@@ -53,8 +53,9 @@ public class TieController {
     @PostMapping(value = "/create")
     public Result createTie(@RequestParam int createUserId,
                             @RequestParam Timestamp createTime,
+                            @RequestParam String title,
                             @RequestParam String content){
-        int resultCode = tieService.createTie(content, createUserId, createTime);
+        int resultCode = tieService.createTie(title, content, createUserId, createTime);
         if(resultCode == -1){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
@@ -108,6 +109,7 @@ public class TieController {
         return Result.success(ties);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/getPageTie", produces = "application/json")
     public Result<List<Tie>> getPageTie(@RequestParam int pageIndex, @RequestParam int pageSize){
         PageInfo<Tie> tiePageInfo;
         try{
@@ -152,7 +154,6 @@ public class TieController {
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);
     }
-
 
 
 

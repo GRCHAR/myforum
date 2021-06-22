@@ -23,6 +23,14 @@ spring:
     port: 5672
     username: guest
     password: guest
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          username: elasticsearch
+          endpoints: 127.0.0.1:9300
+      repositories:
+        enabled: true
 server:
   port: 8070
 

@@ -44,7 +44,6 @@ public class LiveController {
         logger.info("getTsLive:" + "liveId:" + tsId);
         try{
             data = liveService.getTs(tsId);
-
         }catch (Exception e){
             e.printStackTrace();
             return null;

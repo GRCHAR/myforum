@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author genghaoran
  */
-public interface CommentDao {
+public interface CommentDao{
 
     /**
      * 根据跟帖评论的ID查找对象
@@ -51,6 +51,7 @@ public interface CommentDao {
      */
     @Select("SELECT * FROM comment WHERE userId=#{userId}")
     public List<Comment> getCommentByUserId(int userId);
+
 
 
 

@@ -19,7 +19,7 @@ public interface ITieService {
      * @param createTime 创建时间
      * @return 返回是否成功
      */
-    public int createTie(String content, int createUserId, Timestamp createTime);
+    public int createTie(String tilte, String content, int createUserId, Timestamp createTime);
 
     /**
      * 根据ID获取帖子
