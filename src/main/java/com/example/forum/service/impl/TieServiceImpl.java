@@ -70,6 +70,11 @@ public class TieServiceImpl implements ITieService {
         return new PageInfo<Tie>(ties);
     }
 
+    @Override
+    public int deleteTie(int tieId){
+        return tieDao.deleteById(tieId);
+    }
+
 
 
 }

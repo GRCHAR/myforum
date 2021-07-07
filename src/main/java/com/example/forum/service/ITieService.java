@@ -35,10 +35,20 @@ public interface ITieService {
     public List<Tie> getTies();
 
     /**
-     * 获取贴子分液数据
+     * 获取贴子分页数据
      * @param pageIndex 页码
      * @param pageSize 分页尺寸
      * @return 当前页数据
      */
     public PageInfo<Tie> getPageTie(int pageIndex, int pageSize);
+
+
+    /**
+     * 删除帖子
+     * @param tieId 帖子ID
+     * @return 返回被删除的帖子ID
+     */
+    int deleteTie(int tieId);
+
+
 }

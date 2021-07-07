@@ -50,4 +50,14 @@ public class UserServiceImpl implements IUserService {
         }
         return user;
     }
+
+    @Override
+    public int deleteUser(int userid){
+        try{
+            return userDao.deleteById(userid);
+        } catch (Exception e){
+            return 1;
+        }
+    }
+
 }

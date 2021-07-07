@@ -1,9 +1,12 @@
 package com.example.forum.dao;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.forum.bo.Tie;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.reflection.wrapper.BaseWrapper;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -13,7 +16,8 @@ import java.util.List;
  * @author genghaoran
  */
 
-public interface TieDao {
+
+public interface TieDao extends BaseMapper<Tie> {
 
     /**
      * 根据ID获取帖子

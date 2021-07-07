@@ -32,4 +32,10 @@ public interface IUserService {
      */
     public User getUser(int userId);
 
+    /**
+     * 删除用户
+     * @param userid 用户ID
+     * @return 删除结果
+     */
+    int deleteUser(int userid);
 }

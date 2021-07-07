@@ -7,6 +7,7 @@ import com.example.forum.dao.UserDao;
 import com.example.forum.result.Result;
 import com.example.forum.result.ResultCodeMessage;
 import com.example.forum.service.IUserService;
+import com.example.forum.service.cache.IUserCacheService;
 import jdk.nashorn.internal.runtime.ECMAException;
 import org.apache.http.HttpResponse;
 import org.hibernate.boot.spi.InFlightMetadataCollector;
@@ -41,6 +42,9 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IUserCacheService userCacheService;
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -138,6 +142,32 @@ public class UserController {
         }
         return success(user);
     }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE, produces = "application/json")
+    public Result<String> deleteUser(@RequestParam int id){
+        try{
+            userDao.deleteById(id);
+            return Result.success("删除失败");
+        } catch (Exception e){
+            return Result.failure(ResultCodeMessage.SERVER_ERROR);
+        }
+
+    }
+
+    public Result<User> addUserToRedis(@RequestParam String name,
+                                       @RequestParam String password){
+        return null;
+    }
+
+
+    @RequestMapping(value = "/countUser", method = RequestMethod.GET)
+    public Result<User> countUser(){
+
+        return null;
+    }
+
+
+
 
 
 

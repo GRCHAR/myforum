@@ -1,16 +1,19 @@
 package com.example.forum.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.forum.bo.Tie;
 import com.example.forum.bo.User;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 import org.apache.ibatis.jdbc.SQL;
+import org.apache.ibatis.reflection.wrapper.BaseWrapper;
 import org.springframework.stereotype.Component;
 
 /**
  * @author genghaoran
  */
 
-public interface UserDao {
+public interface UserDao extends BaseMapper<User> {
 
     /**
      * 用户注册

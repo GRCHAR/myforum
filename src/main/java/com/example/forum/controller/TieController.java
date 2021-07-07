@@ -121,6 +121,12 @@ public class TieController {
         return Result.success(tiePageInfo.getList());
     }
 
+    @RequestMapping(method = RequestMethod.DELETE, value = "/deleteTie", produces = "application/json")
+    public Result<Object> deleteTie(@RequestParam int tieId){
+        return Result.success();
+    }
+
+
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getCsComments", produces = "application/json")
@@ -154,6 +160,7 @@ public class TieController {
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);
     }
+
 
 
 
