@@ -1,9 +1,11 @@
 package com.example.forum.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.forum.bo.Comment;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.reflection.wrapper.BaseWrapper;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * @author genghaoran
  */
-public interface CommentDao{
+public interface CommentDao extends BaseMapper<Comment> {
 
     /**
      * 根据跟帖评论的ID查找对象

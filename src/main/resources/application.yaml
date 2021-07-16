@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 0
-    host: 127.0.0.1
+    host: 47.93.125.10
     port: 6379
     jedis:
       pool:
@@ -19,7 +19,7 @@ spring:
   application:
     name: rabbitmq-hello
   rabbitmq:
-    host: localhost
+    host: 47.93.125.10
     port: 5672
     username: guest
     password: guest
@@ -28,7 +28,7 @@ spring:
       client:
         reactive:
           username: elasticsearch
-          endpoints: 127.0.0.1:9300
+          endpoints: 47.93.125.10:9300
       repositories:
         enabled: true
 server:

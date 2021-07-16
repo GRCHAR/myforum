@@ -1,5 +1,6 @@
 package com.example.forum.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.forum.bo.Comment;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public interface ICommentService {
      * 创建评论
      * @param userId 用户ID
      * @param tieId 帖子ID
-     * @param comment 评论内容
+     * @param content 评论内容
      * @return 返回评论对象
      */
     public int createComment(int userId, int tieId, String content);
@@ -34,7 +35,7 @@ public interface ICommentService {
      * @param pageSize 页面规格
      * @return 返回评论LIST
      */
-    public List<Comment> getCommentListTie(int tieId, int pageIndex, int pageSize);
+    public IPage<Comment> getCommentListTie(int tieId, int pageIndex, int pageSize);
 
     /**
      * 获取一个用户的所有评论

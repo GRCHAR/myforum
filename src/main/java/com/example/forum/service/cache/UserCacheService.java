@@ -7,9 +7,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.stereotype.Service;
 import com.example.forum.service.cache.IUserCacheService;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * @author genghaoran
@@ -21,7 +29,7 @@ public class UserCacheService implements IUserCacheService{
     private UserDao userDao;
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     private final Logger logger = LoggerFactory.getLogger(UserCacheService.class);
 
@@ -54,16 +62,36 @@ public class UserCacheService implements IUserCacheService{
 
     @Override
     public int countUser(){
-        while(!redisTemplate.hasKey("user_ount")){
-            redisTemplate.opsForValue().set("user_count", 0);
+        if(redisTemplate.hasKey("user_ount")){
+            redisTemplate.opsForValue().set("user_count", "2");
+            redisTemplate.opsForValue().set("user_count_lock", "false");
         }
-        return (Integer)redisTemplate.opsForValue().get("user_count");
+
+        return Integer.parseInt((String) redisTemplate.opsForValue().get("user_count"));
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void addUserCount(){
+        if(redisTemplate.hasKey("user_ount")){
+            redisTemplate.opsForValue().set("user_count", "0");
+            redisTemplate.opsForValue().set("user_count_lock", "false");
+        }
+        if("false".equals(redisTemplate.opsForValue().get("user_count_lock"))){
+            redisTemplate.opsForValue().set("user_count_lock", "true");
+            redisTemplate.opsForValue().increment("user_count", 1);
+            redisTemplate.opsForValue().set("user_count_lock", "false");
+        }
+    }
 
-
-
-
+    @Override
+    public void removeUserCount(){
+        if("false".equals(redisTemplate.opsForValue().get("user_count_lock"))){
+            redisTemplate.opsForValue().set("user_count_lock", "true");
+            redisTemplate.opsForValue().decrement("user_count", 1);
+            redisTemplate.opsForValue().set("user_count_lock", "false");
+        }
+    }
 
 
 

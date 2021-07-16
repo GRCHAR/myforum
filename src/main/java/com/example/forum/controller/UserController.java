@@ -20,7 +20,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Executable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -73,23 +75,40 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result<Integer> loginUser(@RequestBody HashMap<String, String> map,
-                                     HttpServletResponse httpServletResponse,
                                      HttpSession session){
         int userId = 0;
         String name = map.get("name");
         String password = map.get("password");
         try{
             userId = userService.login(name, password);
+            userCacheService.addUserCount();
         }catch (Exception e){
+            logger.info(e.getMessage());
             e.printStackTrace();
-            logger.info("login, String name:" + name + " password:" + password + " " +  e.getMessage());
-            return Result.failure(ResultCodeMessage.SERVER_ERROR);
+            ResultCodeMessage resultCodeMessage = ResultCodeMessage.SERVER_ERROR;
+            resultCodeMessage.setMessage(e.getMessage());
+            return Result.failure(resultCodeMessage);
         }
         session.setAttribute("userId", userId);
-        Cookie cookie = new Cookie("userId", String.valueOf(userId));
-        cookie.setPath("/");
-        httpServletResponse.addCookie(cookie);
         return Result.success(userId);
+    }
+
+    @RequestMapping(value = "/loginObject", method = RequestMethod.POST, produces = "application/json")
+    public Result<User> loginUserObject(@RequestBody User user,
+                                        HttpSession httpSession){
+        try{
+            logger.info("user:", user);
+            int userId = userService.login(user.getName(), user.getPassword());
+            user.setId(userId);
+        }catch (Exception e){
+            logger.info(e.getMessage());
+            e.printStackTrace();
+            ResultCodeMessage resultCodeMessage = ResultCodeMessage.SERVER_ERROR;
+            resultCodeMessage.setMessage(e.getMessage());
+            return Result.failure(resultCodeMessage);
+        }
+        httpSession.setAttribute("userId", user.getId());
+        return Result.success(user);
     }
 
     @RequestMapping(value = "/getComments", method = RequestMethod.GET, produces = "application/json")
@@ -147,7 +166,7 @@ public class UserController {
     public Result<String> deleteUser(@RequestParam int id){
         try{
             userDao.deleteById(id);
-            return Result.success("删除失败");
+            return Result.success("删除成功");
         } catch (Exception e){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
@@ -161,10 +180,34 @@ public class UserController {
 
 
     @RequestMapping(value = "/countUser", method = RequestMethod.GET)
-    public Result<User> countUser(){
+    public Result<Integer> countUser(){
 
-        return null;
+        try{
+            int userCount = userCacheService.countUser();
+            return Result.success(userCount);
+        } catch (Exception e){
+            ResultCodeMessage resultCodeMessage = ResultCodeMessage.SERVER_ERROR;
+            resultCodeMessage.setCode(500);
+            resultCodeMessage.setMessage(e.getMessage());
+            return Result.failure(resultCodeMessage);
+        }
+
     }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public Result<Integer> addUserCount(){
+        try{
+            userCacheService.addUserCount();
+//            int userCount = userCounterCacheService.countUser();
+            return Result.success();
+        } catch (Exception e){
+            e.printStackTrace();
+            ResultCodeMessage resultCodeMessage = ResultCodeMessage.SERVER_ERROR;
+            resultCodeMessage.setMessage(e.getMessage());
+            return Result.failure(resultCodeMessage);
+        }
+    }
+
 
 
 

@@ -1,5 +1,8 @@
 package com.example.forum.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.forum.bo.Comment;
 import com.example.forum.dao.CommentDao;
 import com.example.forum.service.ICommentService;
@@ -34,7 +37,7 @@ public class CommentServiceImpl implements ICommentService {
     public int createComment(int userId, int tieId, String content) {
         try{
             Timestamp createTime = new Timestamp(System.currentTimeMillis());
-            return commentDao.createComment(userId, tieId, content, createTime);
+            return commentDao.insert(new Comment(tieId, userId, content, createTime));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -42,10 +45,15 @@ public class CommentServiceImpl implements ICommentService {
     }
 
     @Override
-    public List<Comment> getCommentListTie(int tieId, int pageIndex, int pageSize) {
+    public IPage<Comment> getCommentListTie(int tieId, int pageIndex, int pageSize) {
         try{
             int start = pageIndex * pageSize;
-            return commentDao.getCommentByTieId(tieId, start, pageSize);
+            QueryWrapper<Comment> commentQueryWrapper = new QueryWrapper<>();
+            Page<Comment> page = new Page<>(1, 5);
+            commentQueryWrapper.eq("tie_id", tieId);
+            IPage<Comment> iPage = commentDao.selectPage(page, commentQueryWrapper);
+
+            return iPage;
         }catch (Exception e){
             e.printStackTrace();
         }

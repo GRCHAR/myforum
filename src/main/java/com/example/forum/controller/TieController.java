@@ -1,6 +1,7 @@
 package com.example.forum.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.forum.bo.Comment;
 import com.example.forum.bo.CsComment;
 import com.example.forum.bo.Tie;
@@ -50,17 +51,17 @@ public class TieController {
     private Logger logger = LoggerFactory.getLogger(TieController.class);
 
 
-    @PostMapping(value = "/create")
-    public Result createTie(@RequestParam int createUserId,
-                            @RequestParam Timestamp createTime,
-                            @RequestParam String title,
-                            @RequestParam String content){
-        int resultCode = tieService.createTie(title, content, createUserId, createTime);
+    @PostMapping(value = "/create", produces = "application/json")
+    public Result<Tie> createTie(@RequestBody Tie tie){
+        logger.info("createUserId:" + tie.getCreateUserId());
+    int resultCode =
+        tieService.createTie(tie.getTitle(), tie.getContent(), tie.getCreateUserId(), tie.getCreateTime());
         if(resultCode == -1){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
         return Result.success();
     }
+
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/get", produces = "application/json")
@@ -82,7 +83,7 @@ public class TieController {
                                                @RequestParam int pageSize){
         List<CommentVo> comments = new ArrayList<>();
         try{
-            List<Comment> localComments = commentService.getCommentListTie(tieId, pageIndex, pageSize);
+            List<Comment> localComments = commentService.getCommentListTie(tieId, pageIndex, pageSize).getRecords();
             for(Comment comment : localComments){
                 logger.info("createTime:" + comment.getTimestamp());
                 User user = userService.getUser(comment.getUserId());
@@ -142,8 +143,8 @@ public class TieController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/createComment")
-    public Result<List<Comment>> createComment(@RequestBody HashMap<String, String> map){
-        List<Comment> comments = new ArrayList<>();
+    public Result<IPage<Comment>> createComment(@RequestBody HashMap<String, String> map){
+        IPage<Comment> comments;
         int userId = Integer.parseInt(map.get("userId"));
         int tieId = Integer.parseInt(map.get("tieId"));
         String content = map.get("content");
@@ -160,6 +161,9 @@ public class TieController {
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);
     }
+
+
+
 
 
 

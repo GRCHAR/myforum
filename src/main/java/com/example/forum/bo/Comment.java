@@ -26,6 +26,13 @@ public class Comment {
         this.createTime = createTime;
     }
 
+    public Comment(int tieId, int userId, String content, Timestamp createTime){
+        this.tieId = tieId;
+        this.userId = userId;
+        this.content = content;
+        this.createTime = createTime;
+    }
+
     public Comment(){
         this.commentId = 0;
         this.content = null;

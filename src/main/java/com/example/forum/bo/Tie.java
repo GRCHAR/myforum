@@ -27,6 +27,13 @@ public class Tie {
         this.content = content;
     }
 
+    public Tie(Timestamp createTime, int createUserId, String title, String content) {
+        this.createTime = createTime;
+        this.createUserId = createUserId;
+        this.title = title;
+        this.content = content;
+    }
+
     public int getId() {
         return id;
     }
