@@ -170,7 +170,6 @@ public class UserController {
         } catch (Exception e){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
-
     }
 
     public Result<User> addUserToRedis(@RequestParam String name,
