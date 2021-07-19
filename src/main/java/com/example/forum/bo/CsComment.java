@@ -1,16 +1,27 @@
 package com.example.forum.bo;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * @author genghaoran
  */
+@Entity(name = "CsComment")
 public class CsComment {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int commentId;
     private int userId;
     private String content;
+
+    public CsComment(){
+
+    }
 
     public CsComment(int id, int commentId, int userId, String content) {
         this.id = id;
