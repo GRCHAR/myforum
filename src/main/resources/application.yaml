@@ -26,8 +26,8 @@ spring:
   rabbitmq:
     host: 47.93.125.10
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: 123456
   data:
     elasticsearch:
       client:
@@ -36,6 +36,8 @@ spring:
           endpoints: 47.93.125.10:9300
       repositories:
         enabled: true
+    mongodb:
+      uri: mongodb://admin:123456@47.93.125.10:27017/forum
 
 server:
   port: 8070
