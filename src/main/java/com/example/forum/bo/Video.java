@@ -16,6 +16,7 @@ public class Video {
     private String title;
     private int userId;
     private String url;
+    private String state;
 
     public Video(){
         this.id = 0;
@@ -24,17 +25,18 @@ public class Video {
         this.url = null;
     }
 
-    public Video(int id, String title, int userId, String url) {
-        this.id = id;
-        this.title = title;
-        this.userId = userId;
-        this.url = url;
-    }
 
     public Video(String title, int userId){
         this.title = title;
         this.userId = userId;
         this.url = null;
+    }
+
+    public Video(int id, String title, int userId, String state){
+        this.id = id;
+        this.title = title;
+        this.userId = userId;
+        this.state = state;
     }
 
     public int getId() {
@@ -67,6 +69,14 @@ public class Video {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
     }
 
     @Override

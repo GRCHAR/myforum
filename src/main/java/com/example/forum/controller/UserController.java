@@ -8,21 +8,15 @@ import com.example.forum.result.Result;
 import com.example.forum.result.ResultCodeMessage;
 import com.example.forum.service.IUserService;
 import com.example.forum.service.cache.IUserCacheService;
-import jdk.nashorn.internal.runtime.ECMAException;
-import org.apache.http.HttpResponse;
-import org.hibernate.boot.spi.InFlightMetadataCollector;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.lang.reflect.Executable;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -54,7 +48,7 @@ public class UserController {
     public Result<Integer> registerUser(@RequestBody HashMap<String, String> map,
                                         HttpServletResponse httpServletResponse,
                                         HttpSession session){
-        int userId = 0;
+        int userId;
         String name = map.get("name");
         String password = map.get("password");
         try{
@@ -76,7 +70,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result<Integer> loginUser(@RequestBody HashMap<String, String> map,
                                      HttpSession session){
-        int userId = 0;
+        int userId;
         String name = map.get("name");
         String password = map.get("password");
         try{
@@ -97,7 +91,7 @@ public class UserController {
     public Result<User> loginUserObject(@RequestBody User user,
                                         HttpSession httpSession){
         try{
-            logger.info("user:", user);
+            logger.info("user:{}", user);
             int userId = userService.login(user.getName(), user.getPassword());
             user.setId(userId);
         }catch (Exception e){
@@ -113,7 +107,7 @@ public class UserController {
 
     @RequestMapping(value = "/getComments", method = RequestMethod.GET, produces = "application/json")
     public Result<List<Comment>> getUserComments(@RequestParam int userId){
-        List<Comment> comments = new ArrayList<>();
+        List<Comment> comments;
         try{
             comments = commentDao.getCommentByUserId(userId);
         }catch(Exception e){
@@ -125,7 +119,7 @@ public class UserController {
 
     @RequestMapping(value = "/getUser", method = RequestMethod.GET, produces = "application/json")
     public Result<User> getUser(@RequestParam int userId){
-        User user = new User();
+        User user;
         try{
            user = userService.getUser(userId);
         }catch (Exception e){
@@ -151,7 +145,7 @@ public class UserController {
     public Result<User> setUser(@RequestParam String name,
                                 @RequestParam String password,
                                 HttpSession session){
-        User user = new User();
+        User user;
         try{
             int userId = (int) session.getAttribute("userId");
             userDao.updateUser(userId, name, password);
@@ -197,7 +191,6 @@ public class UserController {
     public Result<Integer> addUserCount(){
         try{
             userCacheService.addUserCount();
-//            int userCount = userCounterCacheService.countUser();
             return Result.success();
         } catch (Exception e){
             e.printStackTrace();
