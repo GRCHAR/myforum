@@ -21,6 +21,5 @@ public class Sender {
         this.amqpTemplate.convertAndSend("Queue1", context);
     }
 
-
-
+    
 }

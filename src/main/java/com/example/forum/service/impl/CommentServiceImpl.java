@@ -5,8 +5,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.forum.bo.Comment;
 import com.example.forum.dao.CommentDao;
+import com.example.forum.mongodbDao.TieCommentDao;
+import com.example.forum.mongodbEntity.TieComment;
+import com.example.forum.mongodbEntity.TieCommentVo;
 import com.example.forum.service.ICommentService;
 import org.apache.ibatis.annotations.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +26,11 @@ public class CommentServiceImpl implements ICommentService {
 
     @Autowired
     CommentDao commentDao;
+
+    @Autowired
+    TieCommentDao tieCommentDao;
+
+    private Logger logger = LoggerFactory.getLogger(CommentServiceImpl.class);
 
     @Override
     public Comment getComment(int commentId) {
@@ -37,7 +47,11 @@ public class CommentServiceImpl implements ICommentService {
     public int createComment(int userId, int tieId, String content) {
         try{
             Timestamp createTime = new Timestamp(System.currentTimeMillis());
-            return commentDao.insert(new Comment(tieId, userId, content, createTime));
+            Comment comment = new Comment(tieId, userId, content, createTime);
+            int result = commentDao.createComment(comment);
+            logger.info("commentId:{}", comment.getCommentId());
+            tieCommentDao.saveTieComment(new TieComment(comment.getCommentId(), tieId, userId, content, createTime));
+            return result;
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -51,9 +65,7 @@ public class CommentServiceImpl implements ICommentService {
             QueryWrapper<Comment> commentQueryWrapper = new QueryWrapper<>();
             Page<Comment> page = new Page<>(1, 5);
             commentQueryWrapper.eq("tie_id", tieId);
-            IPage<Comment> iPage = commentDao.selectPage(page, commentQueryWrapper);
-
-            return iPage;
+            return commentDao.selectPage(page, commentQueryWrapper);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -70,6 +82,17 @@ public class CommentServiceImpl implements ICommentService {
         return null;
     }
 
+
+
+    @Override
+    public List<TieCommentVo> getCommentListByMongo(int tieId){
+        return tieCommentDao.findCommentById(tieId);
+    }
+
+    @Override
+    public List<TieCommentVo> pageCommentListByMongo(int tieId, int pageNum, int pageSize){
+        return tieCommentDao.pageComment(tieId, pageNum, pageSize);
+    }
 
 
 }

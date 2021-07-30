@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 
 public class Comment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int commentId;
     private int tieId;
     private int userId;
@@ -26,7 +26,6 @@ public class Comment {
     public Timestamp getTimestamp() {
         return createTime;
     }
-
 
     public Comment(int commentId, int tieId, int userId, String content, Timestamp createTime) {
         this.commentId = commentId;

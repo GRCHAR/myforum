@@ -48,6 +48,7 @@ public class UserController {
     public Result<Integer> registerUser(@RequestBody HashMap<String, String> map,
                                         HttpServletResponse httpServletResponse,
                                         HttpSession session){
+        logger.info("start register user!");
         int userId;
         String name = map.get("name");
         String password = map.get("password");
@@ -59,7 +60,7 @@ public class UserController {
         }
         logger.info("registerUser, String name:" + name + " password:" + password);
         session.setAttribute("userId", userId);
-        Cookie cookie = new Cookie("userId", String.valueOf(userId));
+        Cookie cookie = new Cookie("user_id", String.valueOf(userId));
         cookie.setMaxAge(30 * 60);
         cookie.setPath("/");
         httpServletResponse.addCookie(cookie);
@@ -75,6 +76,7 @@ public class UserController {
         String password = map.get("password");
         try{
             userId = userService.login(name, password);
+            userCacheService.addUser(userId);
             userCacheService.addUserCount();
         }catch (Exception e){
             logger.info(e.getMessage());
@@ -83,7 +85,9 @@ public class UserController {
             resultCodeMessage.setMessage(e.getMessage());
             return Result.failure(resultCodeMessage);
         }
-        session.setAttribute("userId", userId);
+        session.setAttribute("user_id", userId);
+        session.setMaxInactiveInterval(30 * 60);
+        logger.info("get Session user_id:{}", session.getAttribute("user_id"));
         return Result.success(userId);
     }
 
@@ -101,7 +105,7 @@ public class UserController {
             resultCodeMessage.setMessage(e.getMessage());
             return Result.failure(resultCodeMessage);
         }
-        httpSession.setAttribute("userId", user.getId());
+        httpSession.setAttribute("user_id", user.getId());
         return Result.success(user);
     }
 
@@ -133,7 +137,7 @@ public class UserController {
     public Result<User> logoutUser(HttpServletResponse response, HttpSession session){
         User user = new User();
         try{
-            session.removeAttribute("userId");
+            session.removeAttribute("user_id");
             session.invalidate();
         } catch (Exception e){
             return failure(ResultCodeMessage.SERVER_ERROR);
@@ -168,6 +172,7 @@ public class UserController {
 
     public Result<User> addUserToRedis(@RequestParam String name,
                                        @RequestParam String password){
+
         return null;
     }
 

@@ -25,6 +25,7 @@ import java.util.Optional;
 @Service
 @CacheConfig(cacheNames = "users")
 public class UserCacheService implements IUserCacheService{
+    String TRUE = "true";
     @Autowired
     private UserDao userDao;
 
@@ -43,7 +44,7 @@ public class UserCacheService implements IUserCacheService{
     public User addUser(int id){
         logger.info("redis addUser:" + id);
         User user = userDao.getUser(id);
-        redisTemplate.opsForValue().set(String.valueOf(id), user);
+        redisTemplate.opsForValue().set(String.valueOf(id), "true");
         return user;
     }
 
@@ -73,16 +74,27 @@ public class UserCacheService implements IUserCacheService{
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void addUserCount(){
-        if(redisTemplate.hasKey("user_ount")){
-            redisTemplate.opsForValue().set("user_count", "0");
+        logger.info("addUserCount");
+        try{
+            if(!redisTemplate.hasKey("user_count")){
+                logger.info("addUserCount has key:user_count");
+                redisTemplate.opsForValue().set("user_count", "1");
+                redisTemplate.opsForValue().set("user_count_lock", "false");
+            }
+        } catch (NullPointerException e){
+            redisTemplate.opsForValue().set("user_count", "1");
             redisTemplate.opsForValue().set("user_count_lock", "false");
         }
+
         if("false".equals(redisTemplate.opsForValue().get("user_count_lock"))){
+            logger.info("addUserCount user_count_lock is false");
             redisTemplate.opsForValue().set("user_count_lock", "true");
             redisTemplate.opsForValue().increment("user_count", 1);
             redisTemplate.opsForValue().set("user_count_lock", "false");
         }
     }
+
+
 
     @Override
     public void removeUserCount(){
@@ -92,6 +104,19 @@ public class UserCacheService implements IUserCacheService{
             redisTemplate.opsForValue().set("user_count_lock", "false");
         }
     }
+
+    @Override
+    public boolean getUserById(int userId){
+        try{
+            if(TRUE.equals(Objects.requireNonNull(redisTemplate.opsForValue().get(String.valueOf(userId))))){
+                return true;
+            }
+        } catch (NullPointerException e){
+            return false;
+        }
+        return false;
+    }
+
 
 
 

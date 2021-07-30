@@ -73,7 +73,6 @@ public class LiveService implements ILiveService {
             inputStream.close();
             logger.info("getMpd mpdId:" + mpdId + "  MPD:" + Arrays.toString(data));
         }
-
         return data;
     }
 

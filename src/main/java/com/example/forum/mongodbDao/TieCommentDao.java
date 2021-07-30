@@ -1,6 +1,9 @@
 package com.example.forum.mongodbDao;
 
 import com.example.forum.mongodbEntity.TieComment;
+import com.example.forum.mongodbEntity.TieCommentVo;
+
+import java.util.List;
 
 /**
  * @author genghaoran
@@ -27,8 +30,10 @@ public interface TieCommentDao {
 
     /**
      * 根据ID查找帖子
-     * @param id 帖子ID
+     * @param tieId 帖子ID
      * @return 返回查找到的帖子对象
      */
-    TieComment findCommentById(int id);
+    List<TieCommentVo> findCommentById(int tieId);
+
+    List<TieCommentVo> pageComment(int tieId, int pageNum, int pageSize);
 }

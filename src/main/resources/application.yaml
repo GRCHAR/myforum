@@ -1,14 +1,19 @@
 
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate.jdbc.time_zone: Asia/Shanghai
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://47.93.125.10:3306/forum
+    url: jdbc:mysql://47.93.125.10:3306/forum?serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 0
@@ -37,7 +42,7 @@ spring:
       repositories:
         enabled: true
     mongodb:
-      uri: mongodb://admin:123456@47.93.125.10:27017/forum
+      uri: mongodb://ghr:123456@47.93.125.10:27017/forum
 
 server:
   port: 8070

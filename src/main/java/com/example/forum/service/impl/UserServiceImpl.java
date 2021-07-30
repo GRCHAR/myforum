@@ -3,6 +3,8 @@ package com.example.forum.service.impl;
 import com.example.forum.bo.User;
 import com.example.forum.dao.UserDao;
 import com.example.forum.service.IUserService;
+import com.example.forum.service.cache.IUserCacheService;
+import com.example.forum.service.cache.UserCacheService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private IUserCacheService userCacheService;
 
     Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 

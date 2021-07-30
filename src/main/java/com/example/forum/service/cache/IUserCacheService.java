@@ -12,4 +12,6 @@ public interface IUserCacheService {
     void addUserCount();
 
     void removeUserCount();
+
+    boolean getUserById(int userId);
 }

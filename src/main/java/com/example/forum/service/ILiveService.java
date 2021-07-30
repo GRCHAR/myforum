@@ -14,4 +14,5 @@ public interface ILiveService {
     byte[] getMpd(int mpdId) throws IOException;
 
     byte[] getM4s(int mpdId, int iniId, int chunkId) throws IOException;
+
 }

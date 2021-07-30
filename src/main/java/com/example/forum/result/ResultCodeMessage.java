@@ -13,7 +13,9 @@ public enum ResultCodeMessage {
     // 资源未找到
     NOT_FOUND(404, "not found"),
     // 服务器错误
-    SERVER_ERROR(500,"server error"),;
+    SERVER_ERROR(500,"server error"),
+
+    LOGIN_ERROR(501, "login error");
 
     private int code;
     private String message;

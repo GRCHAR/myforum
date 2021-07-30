@@ -2,6 +2,7 @@ package com.example.forum.vo;
 
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * @author genghaoran
@@ -20,6 +21,14 @@ public class CommentVo {
         this.userId = userId;
         this.name = name;
         this.createTime = createTime;
+    }
+
+    public CommentVo(int commentId, String content, int id, String name, Date createTime) {
+        this.commentId = commentId;
+        this.content = content;
+        this.userId = id;
+        this.name = name;
+        this.createTime = new Timestamp(createTime.getTime());
     }
 
     public int getCommentId() {

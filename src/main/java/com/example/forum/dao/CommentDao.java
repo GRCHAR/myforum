@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.forum.bo.Comment;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.reflection.wrapper.BaseWrapper;
 import org.springframework.stereotype.Component;
@@ -27,14 +28,12 @@ public interface CommentDao extends BaseMapper<Comment> {
 
     /**
      * 创建评论
-     * @param userId 用户ID
-     * @param tieId 贴吧ID
-     * @param content 评论内容
-     * @param createTime 创建时间
+     * @param comment 评论对象
      * @return 返回评论ID
      */
-    @Insert("INSERT INTO comment(userId, tieId, content, createTime) VALUES(#{userId}, #{tieId}, #{content}, #{createTime})")
-    public int createComment(int userId, int tieId, String content, Timestamp createTime);
+    @Insert("INSERT INTO comment(user_id, tie_id, content, create_time) VALUES(#{userId}, #{tieId}, #{content}, #{createTime})")
+    @Options(useGeneratedKeys = true, keyProperty = "commentId", keyColumn = "commentId")
+    public int createComment(Comment comment);
 
     /**
      * 根据帖子ID获取该帖子下所有评论
