@@ -1,31 +1,43 @@
 package com.example.forum.mongodbDao.impl;
 
-import com.example.forum.mongodbDao.TieMongoDao;
-import com.example.forum.mongodbEntity.TieComment;
+import com.example.forum.mongodbEntity.Tie;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Component;
 
 /**
  * @author genghaoran
  */
-public class TieMongoDaoImpl implements TieMongoDao {
+@Component
+public class TieMongoDaoImpl {
 
 
-    @Override
-    public void saveTieComment(TieComment tieComment) {
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
+
+    public void saveTie(Tie tie) {
+        mongoTemplate.save(tie);
     }
 
-    @Override
-    public void removeTieComment(int id) {
 
+    public void removeTie(int id) {
+        mongoTemplate.remove(id);
     }
 
-    @Override
-    public void updateComment(TieComment tieComment) {
 
+    public void updateTie(Tie tie) {
+        Query query = new Query(Criteria.where("commentId").is(tie.getTieId()));
+        Update update = new Update();
+        update.addToSet("content", tie.getContent());
+        mongoTemplate.updateFirst(query, update, Tie.class);
     }
 
-    @Override
-    public TieComment findCommentById(int id) {
-        return null;
+
+    public Tie findTieById(int id) {
+        return mongoTemplate.findById(id, Tie.class);
     }
 }

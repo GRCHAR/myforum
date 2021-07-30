@@ -1,30 +1,28 @@
 package com.example.forum.mongodbEntity;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 /**
  * @author genghaoran
  */
 @Document(collection = "tie_comment")
-public class TieComment implements Serializable {
+public class TieCommentVo implements Serializable {
 
     private int commentId;
     private int tieId;
     private int userId;
     private String content;
-    private Timestamp createTime;
+    private Date createTime;
 
 
-    public TieComment(){
+    public TieCommentVo(){
 
     }
 
-    public TieComment(int commentId, int tieId, int userId, String content, Timestamp createTime){
+    public TieCommentVo(int commentId, int tieId, int userId, String content, Date createTime){
         this.commentId = commentId;
         this.tieId = tieId;
         this.userId = userId;
@@ -47,7 +45,7 @@ public class TieComment implements Serializable {
         this.content = content;
     }
 
-    public void setCreateTime(Timestamp createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -71,7 +69,7 @@ public class TieComment implements Serializable {
         return content;
     }
 
-    public Timestamp getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 }

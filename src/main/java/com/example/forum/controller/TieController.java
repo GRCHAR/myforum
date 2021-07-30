@@ -7,6 +7,8 @@ import com.example.forum.bo.CsComment;
 import com.example.forum.bo.Tie;
 import com.example.forum.bo.User;
 import com.example.forum.dao.TieDao;
+import com.example.forum.mongodbEntity.TieComment;
+import com.example.forum.mongodbEntity.TieCommentVo;
 import com.example.forum.result.Result;
 import com.example.forum.result.ResultCodeMessage;
 import com.example.forum.service.ICommentService;
@@ -15,10 +17,12 @@ import com.example.forum.service.ITieService;
 import com.example.forum.service.IUserService;
 import com.example.forum.vo.CommentVo;
 import com.github.pagehelper.PageInfo;
+import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.common.recycler.Recycler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -54,12 +58,11 @@ public class TieController {
     @PostMapping(value = "/create", produces = "application/json")
     public Result<Tie> createTie(@RequestBody Tie tie){
         logger.info("createUserId:" + tie.getCreateUserId());
-    int resultCode =
-        tieService.createTie(tie.getTitle(), tie.getContent(), tie.getCreateUserId(), tie.getCreateTime());
+        int resultCode = tieService.createTie(tie.getTitle(), tie.getContent(), tie.getCreateUserId(), tie.getCreateTime());
         if(resultCode == -1){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
-        return Result.success();
+        return Result.success(tie);
     }
 
 
@@ -97,6 +100,30 @@ public class TieController {
         }
         return Result.success(comments);
     }
+
+    @RequestMapping(value = "/getCommentsByMongo", method = RequestMethod.GET)
+    public Result<List<CommentVo>> getCommentsByMongo(@RequestBody HashMap<String, Object> jsonObject){
+
+        List<CommentVo> commentVos = new ArrayList<>();
+        try{
+            logger.info("jsonObject:{}", jsonObject.toString());
+            int tieId = (int) jsonObject.get("tieId");
+            List<TieCommentVo> localComments = commentService.getCommentListByMongo(tieId);
+            for(TieCommentVo comment : localComments){
+                logger.info("createTime:" + comment.getCreateTime());
+                User user = userService.getUser(comment.getUserId());
+                CommentVo commentVo = new CommentVo(comment.getCommentId(), comment.getContent(),
+                        user.getId(), user.getName(), comment.getCreateTime());
+                commentVos.add(commentVo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.failure(ResultCodeMessage.SERVER_ERROR);
+        }
+        return Result.success(commentVos);
+
+    }
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/getTies", produces = "application/json")
     public Result<List<Tie>> getTies(){
@@ -151,12 +178,13 @@ public class TieController {
         try{
             int result = commentService.createComment(userId, tieId, content);
             if(result == -1){
-                return null;
+                logger.error("createComment error");
+                return Result.failure(ResultCodeMessage.SERVER_ERROR);
             }
             comments = commentService.getCommentListTie(tieId, 0, 100);
         }catch (Exception e){
             logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId + " exception:" + e.getMessage());
-            return null;
+            return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);

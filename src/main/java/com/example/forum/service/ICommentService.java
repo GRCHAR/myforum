@@ -2,6 +2,8 @@ package com.example.forum.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.forum.bo.Comment;
+import com.example.forum.mongodbEntity.TieComment;
+import com.example.forum.mongodbEntity.TieCommentVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,4 +45,6 @@ public interface ICommentService {
      * @return 返回评论LIST
      */
     public List<Comment> getCommentListUser(int userId);
+
+    List<TieCommentVo> getCommentListByMongo(int tieId);
 }

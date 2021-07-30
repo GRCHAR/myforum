@@ -48,6 +48,7 @@ public class UserController {
     public Result<Integer> registerUser(@RequestBody HashMap<String, String> map,
                                         HttpServletResponse httpServletResponse,
                                         HttpSession session){
+        logger.info("start register user!");
         int userId;
         String name = map.get("name");
         String password = map.get("password");
@@ -83,7 +84,8 @@ public class UserController {
             resultCodeMessage.setMessage(e.getMessage());
             return Result.failure(resultCodeMessage);
         }
-        session.setAttribute("userId", userId);
+        session.setAttribute("user_id", userId);
+        logger.info("get Session user_id:{}", session.getAttribute("user_id"));
         return Result.success(userId);
     }
 
@@ -101,7 +103,7 @@ public class UserController {
             resultCodeMessage.setMessage(e.getMessage());
             return Result.failure(resultCodeMessage);
         }
-        httpSession.setAttribute("userId", user.getId());
+        httpSession.setAttribute("user_id", user.getId());
         return Result.success(user);
     }
 
@@ -133,7 +135,7 @@ public class UserController {
     public Result<User> logoutUser(HttpServletResponse response, HttpSession session){
         User user = new User();
         try{
-            session.removeAttribute("userId");
+            session.removeAttribute("user_id");
             session.invalidate();
         } catch (Exception e){
             return failure(ResultCodeMessage.SERVER_ERROR);
