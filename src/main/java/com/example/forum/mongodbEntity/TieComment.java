@@ -32,6 +32,13 @@ public class TieComment implements Serializable {
         this.createTime = createTime;
     }
 
+    public TieComment(int tieId, int userId, String content, Timestamp createTime){
+        this.tieId = tieId;
+        this.userId = userId;
+        this.content = content;
+        this.createTime = createTime;
+    }
+
 
 
 

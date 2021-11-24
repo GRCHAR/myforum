@@ -27,8 +27,10 @@ public class TieCommentDaoImpl implements TieCommentDao {
     private final Logger logger = LoggerFactory.getLogger(TieCommentDaoImpl.class);
 
     @Override
-    public void saveTieComment(TieComment tieComment) {
-        logger.info("mongoDB save TieComment:{}",mongoTemplate.save(tieComment));
+    public TieComment saveTieComment(TieComment tieComment) {
+        TieComment result = mongoTemplate.save(tieComment);
+        logger.info("mongoDB save TieComment:{}",result);
+        return result;
     }
 
     @Override
@@ -47,8 +49,6 @@ public class TieCommentDaoImpl implements TieCommentDao {
     @Override
     public List<TieCommentVo> findCommentById(int tieId) {
         Query query = new Query(Criteria.where("tieId").is(tieId));
-        TieComment tieComment = new TieComment();
-        tieComment.setTieId(tieId);
         return mongoTemplate.find(query, TieCommentVo.class);
     }
 

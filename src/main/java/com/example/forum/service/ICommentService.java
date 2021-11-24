@@ -30,6 +30,8 @@ public interface ICommentService {
      */
     public int createComment(int userId, int tieId, String content);
 
+    TieComment createCommentByMongo(int userId, int tieId, String content);
+
     /**
      * 获取一个帖子下的所有评论
      * @param tieId 帖子ID

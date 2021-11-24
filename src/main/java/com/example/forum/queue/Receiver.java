@@ -11,6 +11,8 @@ import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 
+import java.nio.channels.Channel;
+
 /** @author genghaoran */
 @Component
 @RabbitListener(queues = "upload.video")
@@ -18,14 +20,23 @@ public class Receiver {
 
   private final Logger logger = LoggerFactory.getLogger(Receiver.class);
 
+  private final String CODE = "code";
+
+  private final int UPLOADING = 2;
+
+  private final int SUCCESS = 0;
+
+  private final int FAILE = 1;
+
   @Autowired private VideoDao videoDao;
 
   @RabbitHandler
   public void queueReceiver(String jsonData) {
 
     try {
+
       JSONObject uploadVideo = new JSONObject(jsonData);
-      if (uploadVideo.getInt("code") == 2) {
+      if (uploadVideo.getInt(CODE) == UPLOADING) {
         Video video = new Video();
         video.setId(uploadVideo.getInt("videoId"));
         video.setTitle(uploadVideo.getString("title"));
@@ -34,7 +45,7 @@ public class Receiver {
         if (videoDao.selectById(video.getId()) == null) {
           videoDao.insert(video);
         }
-      } else if (uploadVideo.getInt("code") == 1 || uploadVideo.getInt("code") == 0) {
+      } else if (uploadVideo.getInt(CODE) == FAILE || uploadVideo.getInt(CODE) == SUCCESS) {
         String title = uploadVideo.getString("title");
         int userId = uploadVideo.getInt("userId");
         String state = uploadVideo.getString("state");

@@ -15,7 +15,11 @@ public enum ResultCodeMessage {
     // 服务器错误
     SERVER_ERROR(500,"server error"),
 
-    LOGIN_ERROR(501, "login error");
+    LOGIN_ERROR(501, "login error"),
+
+    USERNAME_PASSWORD_ERROR(500, "username or password error");
+
+
 
     private int code;
     private String message;

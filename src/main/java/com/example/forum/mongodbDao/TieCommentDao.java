@@ -13,8 +13,10 @@ public interface TieCommentDao {
     /**
      * 创建帖子评论
      * @param tieComment 帖子评论对象
+     * @return 创建结果对象
+     *
      */
-    void saveTieComment(TieComment tieComment);
+    TieComment saveTieComment(TieComment tieComment);
 
     /**
      * 根据ID删除帖子评论

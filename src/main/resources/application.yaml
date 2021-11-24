@@ -52,3 +52,6 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+user:
+  imagePath:/Users/genghaoran/userImage/

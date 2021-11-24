@@ -33,6 +33,7 @@ public class TieMongoDaoImpl {
         Query query = new Query(Criteria.where("commentId").is(tie.getTieId()));
         Update update = new Update();
         update.addToSet("content", tie.getContent());
+        update.addToSet("title", tie.getTitle());
         mongoTemplate.updateFirst(query, update, Tie.class);
     }
 

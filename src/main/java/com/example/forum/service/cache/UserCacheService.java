@@ -74,24 +74,43 @@ public class UserCacheService implements IUserCacheService{
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void addUserCount(){
-        logger.info("addUserCount");
+        logger.info("addUserCount0");
         try{
             if(!redisTemplate.hasKey("user_count")){
+                logger.info("addUserCount1");
                 logger.info("addUserCount has key:user_count");
                 redisTemplate.opsForValue().set("user_count", "1");
                 redisTemplate.opsForValue().set("user_count_lock", "false");
             }
         } catch (NullPointerException e){
+            logger.info("addUserCount2");
             redisTemplate.opsForValue().set("user_count", "1");
             redisTemplate.opsForValue().set("user_count_lock", "false");
         }
-
-        if("false".equals(redisTemplate.opsForValue().get("user_count_lock"))){
-            logger.info("addUserCount user_count_lock is false");
-            redisTemplate.opsForValue().set("user_count_lock", "true");
-            redisTemplate.opsForValue().increment("user_count", 1);
-            redisTemplate.opsForValue().set("user_count_lock", "false");
+        String user_count_lock = (String) redisTemplate.opsForValue().get("user_count_lock");
+        try{
+            if("false".equals(user_count_lock)){
+                logger.info("addUserCount user_count_lock is false");
+                redisTemplate.opsForValue().set("user_count_lock", "true");
+                redisTemplate.opsForValue().increment("user_count", 1);
+                redisTemplate.opsForValue().set("user_count_lock", "false");
+            } else if("true".equals(user_count_lock)){
+                logger.info("addUserCount user_count_lock is true");
+                //TODO 更换为线程队列进行异步用户统计
+                while("true".equals(redisTemplate.opsForValue().get("user_count_lock"))){
+                    Thread.sleep(1000);
+                }
+                redisTemplate.opsForValue().set("user_count_lock", "true");
+                redisTemplate.opsForValue().increment("user_count", 1);
+                redisTemplate.opsForValue().set("user_count_lock", "false");
+            }
+        } catch (Exception e){
+            logger.error(e.getMessage());
+            e.printStackTrace();
         }
+
+
+
     }
 
 

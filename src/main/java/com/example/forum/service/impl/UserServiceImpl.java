@@ -1,6 +1,7 @@
 package com.example.forum.service.impl;
 
 import com.example.forum.bo.User;
+import com.example.forum.config.ConfigParam;
 import com.example.forum.dao.UserDao;
 import com.example.forum.service.IUserService;
 import com.example.forum.service.cache.IUserCacheService;
@@ -10,6 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 
 /**
  * @author genghaoran
@@ -22,6 +27,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private IUserCacheService userCacheService;
+
+    @Autowired
+    private ConfigParam configParam;
 
     Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -57,6 +65,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public boolean isExistUser(String userName, String password){
+        User user  = userDao.getUserByNameAndPassword(userName, password);
+        return user != null;
+    }
+
+    @Override
     public int deleteUser(int userid){
         try{
             return userDao.deleteById(userid);
@@ -64,5 +78,40 @@ public class UserServiceImpl implements IUserService {
             return 1;
         }
     }
+
+    @Override
+    public void uploadUserImage(MultipartFile multipartFile, int userId){
+        File fileDir = new File(String.valueOf(configParam.getUserImagePath()));
+
+        File file = new File(configParam.getUserImagePath() + "userId.jpg");
+        if(!fileDir.exists()){
+            if (!fileDir.mkdirs()) {
+                logger.error("not successes mkdir!");
+            }
+        }
+        try {
+            multipartFile.transferTo(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void getUserImage(HttpServletResponse response, int userId){
+        try {
+            byte[] buffer = new byte[1024];
+            File file = new File(configParam.getUserImagePath() + "userId.jpg");
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            int readNumber = bufferedInputStream.read(buffer, 0, 1024);
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(response.getOutputStream());
+            while(readNumber != -1){
+                bufferedOutputStream.write(buffer, 0, readNumber);
+                readNumber = bufferedInputStream.read(buffer,0,1024);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

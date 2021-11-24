@@ -13,7 +13,6 @@ import java.sql.Timestamp;
  * @author genghaoran
  */
 @Entity(name = "comment")
-
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

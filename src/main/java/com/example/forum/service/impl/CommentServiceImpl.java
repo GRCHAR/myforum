@@ -59,6 +59,13 @@ public class CommentServiceImpl implements ICommentService {
     }
 
     @Override
+    public TieComment createCommentByMongo(int userId, int tieId, String content){
+        Timestamp createTime = new Timestamp(System.currentTimeMillis());
+        TieComment tieComment = new TieComment(tieId, userId, content, createTime);
+        return tieCommentDao.saveTieComment(tieComment);
+    }
+
+    @Override
     public IPage<Comment> getCommentListTie(int tieId, int pageIndex, int pageSize) {
         try{
             int start = pageIndex * pageSize;

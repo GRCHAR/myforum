@@ -30,13 +30,14 @@ public class TieServiceImpl implements ITieService {
 
     @Override
     public int createTie(String title, String content, int createUserId, Timestamp createTime) {
+        int tieId = 0;
         try{
-            tieDao.insert(new Tie(new Timestamp(System.currentTimeMillis()), createUserId, title, content));
+            tieId = tieDao.insert(new Tie(new Timestamp(System.currentTimeMillis()), createUserId, title, content));
         }catch (Exception e){
             e.printStackTrace();
             return -1;
         }
-        return 0;
+        return tieId;
     }
 
     @Override

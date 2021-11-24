@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -75,14 +76,17 @@ public class UserController {
         String name = map.get("name");
         String password = map.get("password");
         try{
+            if(!userService.isExistUser(name, password)){
+                ResultCodeMessage resultCodeMessage = ResultCodeMessage.USERNAME_PASSWORD_ERROR;
+                return Result.failure(resultCodeMessage);
+            }
             userId = userService.login(name, password);
             userCacheService.addUser(userId);
             userCacheService.addUserCount();
         }catch (Exception e){
             logger.info(e.getMessage());
             e.printStackTrace();
-            ResultCodeMessage resultCodeMessage = ResultCodeMessage.SERVER_ERROR;
-            resultCodeMessage.setMessage(e.getMessage());
+            ResultCodeMessage resultCodeMessage = ResultCodeMessage.LOGIN_ERROR;
             return Result.failure(resultCodeMessage);
         }
         session.setAttribute("user_id", userId);
@@ -204,6 +208,29 @@ public class UserController {
             return Result.failure(resultCodeMessage);
         }
     }
+
+    @RequestMapping(value = "/addEditImage")
+    public Result<User> addEditUserImage(@RequestParam("file")MultipartFile multipartFile, HttpSession session){
+        try{
+            int userId = (int)session.getAttribute("userId");
+            userService.uploadUserImage(multipartFile, userId);
+        } catch (Exception e){
+            logger.error("addEditUserImage error, message:" + e.getMessage());
+            e.printStackTrace();
+        }
+        return Result.failure(ResultCodeMessage.SERVER_ERROR);
+    }
+
+    public Result<User> getUserImage(@RequestParam int userId, HttpServletResponse response){
+        try{
+
+        } catch (Exception e){
+            e.printStackTrace();
+            logger.error("getUserImage error, message:" + e.getMessage());
+        }
+        return Result.failure(ResultCodeMessage.SERVER_ERROR);
+    }
+
 
 
 
