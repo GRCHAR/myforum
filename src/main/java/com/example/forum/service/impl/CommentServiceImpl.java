@@ -89,6 +89,11 @@ public class CommentServiceImpl implements ICommentService {
         return null;
     }
 
+    @Override
+    public List<TieCommentVo> getCommentListByMongo(int tieId){
+        return tieCommentDao.findCommentById(tieId);
+    }
+
 
 
     @Override
