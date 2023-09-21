@@ -9,13 +9,13 @@ import java.util.Date;
  */
 public class CommentVo {
 
-    private int commentId;
+    private String commentId;
     private String content;
     private int userId;
     private String name;
     private Timestamp createTime;
 
-    public CommentVo(int commentId, String content, int userId, String name, Timestamp createTime) {
+    public CommentVo(String commentId, String content, int userId, String name, Timestamp createTime) {
         this.commentId = commentId;
         this.content = content;
         this.userId = userId;
@@ -23,7 +23,7 @@ public class CommentVo {
         this.createTime = createTime;
     }
 
-    public CommentVo(int commentId, String content, int id, String name, Date createTime) {
+    public CommentVo(String commentId, String content, int id, String name, Date createTime) {
         this.commentId = commentId;
         this.content = content;
         this.userId = id;
@@ -31,11 +31,11 @@ public class CommentVo {
         this.createTime = new Timestamp(createTime.getTime());
     }
 
-    public int getCommentId() {
+    public String getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(String commentId) {
         this.commentId = commentId;
     }
 

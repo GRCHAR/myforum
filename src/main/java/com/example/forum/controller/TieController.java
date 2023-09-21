@@ -4,8 +4,8 @@ package com.example.forum.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.forum.bo.Comment;
 import com.example.forum.bo.CsComment;
-import com.example.forum.bo.Tie;
 import com.example.forum.bo.User;
+import com.example.forum.mongodbEntity.Tie;
 import com.example.forum.mongodbEntity.TieComment;
 import com.example.forum.mongodbEntity.TieCommentVo;
 import com.example.forum.result.Result;
@@ -15,18 +15,16 @@ import com.example.forum.service.ICsCommentService;
 import com.example.forum.service.ITieService;
 import com.example.forum.service.IUserService;
 import com.example.forum.vo.CommentVo;
-import com.github.pagehelper.PageInfo;
+import com.example.forum.mongodbEntity.TieVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 /**
@@ -54,13 +52,13 @@ public class TieController {
 
 
     @PostMapping(value = "/create", produces = "application/json")
-    public Result<Tie> createTie(@RequestBody Tie tie, HttpSession session){
+    public Result<com.example.forum.mongodbEntity.Tie> createTie(@RequestBody Tie tie, HttpSession session){
         int userId = (int) session.getAttribute("user_id");
         logger.info("createUserId:" + userId);
-        int resultCode = tieService.createTie(tie.getTitle(), tie.getContent(), userId, tie.getCreateTime());
-        tie.setId(resultCode);
+
+        String resultCode = tieService.createTie(tie.getTitle(), tie.getContent(), userId, tie.getCreateTime());
         tie.setCreateUserId(userId);
-        if(resultCode == -1){
+        if(resultCode == null){
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
         return Result.success(tie);
@@ -69,8 +67,8 @@ public class TieController {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/get", produces = "application/json")
-    public Result<Tie> getTie(@RequestParam int id){
-        Tie tie = new Tie();
+    public Result<com.example.forum.mongodbEntity.Tie> getTie(@RequestParam int id){
+        com.example.forum.mongodbEntity.Tie tie = new com.example.forum.mongodbEntity.Tie();
         try{
             tie = tieService.getTieById(id);
         }catch(Exception e){
@@ -130,7 +128,7 @@ public class TieController {
         int tieId = (int) jsonObject.get("tieId");
         int userId = (int) session.getAttribute("user_id");
         String content = String.valueOf(jsonObject.get("content"));
-        TieCommentVo tieCommentVo = new TieCommentVo(0, tieId, userId, content, null);
+        TieCommentVo tieCommentVo = new TieCommentVo("", tieId, userId, content, null);
         try{
             TieComment tieComment = commentService.createCommentByMongo(userId, tieId, content);
             tieCommentVo.setCommentId(tieComment.getCommentId());
@@ -164,8 +162,8 @@ public class TieController {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getTies", produces = "application/json")
-    public Result<List<Tie>> getTies(){
-        List<Tie> ties = new ArrayList<>();
+    public Result<List<TieVo>> getTies(){
+        List<TieVo> ties = new ArrayList<>();
         try{
             ties = tieService.getTies();
         }catch (Exception e){
@@ -176,15 +174,15 @@ public class TieController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getPageTie", produces = "application/json")
-    public Result<List<Tie>> getPageTie(@RequestParam int pageIndex, @RequestParam int pageSize){
-        PageInfo<Tie> tiePageInfo;
+    public Result<List<TieVo>> getPageTie(@RequestParam int pageIndex, @RequestParam int pageSize){
+        List<TieVo> tiePageInfo;
         try{
             tiePageInfo = tieService.getPageTie(pageIndex, pageSize);
         } catch (Exception e){
             logger.error("getPageTie " + e.getMessage());
             return Result.failure(ResultCodeMessage.SERVER_ERROR);
         }
-        return Result.success(tiePageInfo.getList());
+        return Result.success(tiePageInfo);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/deleteTie", produces = "application/json")
@@ -206,7 +204,7 @@ public class TieController {
         }
         return Result.success(csComments);
     }
-    
+
     @RequestMapping(method = RequestMethod.POST, value = "/createComment")
     public Result<IPage<Comment>> createComment(@RequestBody HashMap<String, String> map){
         IPage<Comment> comments;
@@ -227,6 +225,14 @@ public class TieController {
         logger.info("createComment:String content:" + content + " int userId:" + userId + " int tieId:" + tieId);
         return Result.success(comments);
     }
+
+    @PostMapping(value = "/deleteComment", produces = "application/json")
+    public Result<Boolean>  deleteComment(@RequestParam String commentId) {
+        return null;
+    }
+
+
+
 
 
 }

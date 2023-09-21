@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author genghaoran
  */
 @Component
-@RabbitListener(queues = "test")
+@RabbitListener(queues = "Queue1")
 public class TestReceiver {
 
     private final Logger logger = LoggerFactory.getLogger(TestReceiver.class);

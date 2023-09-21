@@ -1,16 +1,12 @@
 package com.example.forum.service.impl;
 
-import com.example.forum.bo.Tie;
-import com.example.forum.controller.TieController;
-import com.example.forum.dao.TieDao;
+import com.example.forum.mongodbDao.TieMongoDao;
+import com.example.forum.mongodbEntity.Tie;
 import com.example.forum.service.ITieService;
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import com.example.forum.mongodbEntity.TieVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -24,27 +20,28 @@ import java.util.List;
 public class TieServiceImpl implements ITieService {
 
     @Autowired
-    private TieDao tieDao;
+    private TieMongoDao tieMongoDao;
 
     private final Logger logger = LoggerFactory.getLogger(TieServiceImpl.class);
 
+
     @Override
-    public int createTie(String title, String content, int createUserId, Timestamp createTime) {
-        int tieId = 0;
+    public String createTie(String title, String content, int createUserId, Timestamp createTime) {
+        Tie tie = new Tie(title, content,createUserId , new Timestamp(System.currentTimeMillis()));
         try{
-            tieId = tieDao.insert(new Tie(new Timestamp(System.currentTimeMillis()), createUserId, title, content));
+            tieMongoDao.saveTie(tie);
         }catch (Exception e){
             e.printStackTrace();
-            return -1;
+            return "";
         }
-        return tieId;
+        return tie.getTieId();
     }
 
     @Override
     public Tie getTieById(int id) {
         Tie tie = new Tie();
         try{
-            tie = tieDao.getTieById(id);
+            tie = tieMongoDao.findTieById(id);
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -53,10 +50,13 @@ public class TieServiceImpl implements ITieService {
     }
 
     @Override
-    public List<Tie> getTies(){
-        List<Tie> ties = new ArrayList<>();
+    public List<TieVo> getTies(){
+        List<TieVo> ties = new ArrayList<>();
         try{
-            ties = tieDao.getAllTie();
+            logger.info("ties 1");
+
+            ties = tieMongoDao.pageTie(1, 50);
+            logger.info("ties:{}", ties);
         }catch (Exception e){
             logger.error("getTies " + e.getMessage());
             return null;
@@ -65,15 +65,13 @@ public class TieServiceImpl implements ITieService {
     }
 
     @Override
-    public PageInfo<Tie> getPageTie(int pageIndex, int pageSize){
-        PageHelper.startPage(pageIndex, pageSize);
-        List<Tie> ties = tieDao.getAllTie();
-        return new PageInfo<Tie>(ties);
+    public List<TieVo> getPageTie(int pageIndex, int pageSize){
+        return tieMongoDao.pageTie(pageIndex, pageSize);
     }
 
     @Override
-    public int deleteTie(int tieId){
-        return tieDao.deleteById(tieId);
+    public void deleteTie(int tieId){
+        tieMongoDao.removeTie(tieId);
     }
 
 

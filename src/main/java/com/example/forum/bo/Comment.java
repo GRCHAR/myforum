@@ -1,8 +1,6 @@
 package com.example.forum.bo;
 
 
-import org.hibernate.annotations.Table;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +14,7 @@ import java.sql.Timestamp;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int commentId;
+    private String commentId;
     private int tieId;
     private int userId;
     private String content;
@@ -26,7 +24,7 @@ public class Comment {
         return createTime;
     }
 
-    public Comment(int commentId, int tieId, int userId, String content, Timestamp createTime) {
+    public Comment(String commentId, int tieId, int userId, String content, Timestamp createTime) {
         this.commentId = commentId;
         this.tieId = tieId;
         this.userId = userId;
@@ -42,7 +40,7 @@ public class Comment {
     }
 
     public Comment(){
-        this.commentId = 0;
+        this.commentId = "";
         this.content = null;
         this.tieId = 0;
         this.userId = 0;
@@ -50,7 +48,7 @@ public class Comment {
     }
 
 
-    public int getCommentId() {
+    public String getCommentId() {
         return commentId;
     }
 
@@ -66,7 +64,7 @@ public class Comment {
         return content;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(String commentId) {
         this.commentId = commentId;
     }
 

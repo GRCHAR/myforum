@@ -1,7 +1,7 @@
 package com.example.forum.service;
 
-import com.example.forum.bo.Tie;
-import com.github.pagehelper.PageInfo;
+import com.example.forum.mongodbEntity.Tie;
+import com.example.forum.mongodbEntity.TieVo;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -17,7 +17,7 @@ public interface ITieService {
      * @param createTime 创建时间
      * @return 返回是否成功
      */
-    public int createTie(String tilte, String content, int createUserId, Timestamp createTime);
+    public String createTie(String tilte, String content, int createUserId, Timestamp createTime);
 
     /**
      * 根据ID获取帖子
@@ -30,7 +30,9 @@ public interface ITieService {
      * 获取全部帖子
      * @return 全部帖子列表
      */
-    public List<Tie> getTies();
+//    public List<Tie> getTies();
+
+    List<TieVo> getTies();
 
     /**
      * 获取贴子分页数据
@@ -38,7 +40,7 @@ public interface ITieService {
      * @param pageSize 分页尺寸
      * @return 当前页数据
      */
-    public PageInfo<Tie> getPageTie(int pageIndex, int pageSize);
+    public List<TieVo> getPageTie(int pageIndex, int pageSize);
 
 
     /**
@@ -46,7 +48,7 @@ public interface ITieService {
      * @param tieId 帖子ID
      * @return 返回被删除的帖子ID
      */
-    int deleteTie(int tieId);
+    void deleteTie(int tieId);
 
 
 }

@@ -5,7 +5,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * @author genghaoran
@@ -13,7 +12,8 @@ import java.util.Date;
 @Document(collection = "tie_comment")
 public class TieComment implements Serializable {
 
-    private int commentId;
+    @Id
+    private String commentId;
     private int tieId;
     private int userId;
     private String content;
@@ -24,7 +24,7 @@ public class TieComment implements Serializable {
 
     }
 
-    public TieComment(int commentId, int tieId, int userId, String content, Timestamp createTime){
+    public TieComment(String commentId, int tieId, int userId, String content, Timestamp createTime){
         this.commentId = commentId;
         this.tieId = tieId;
         this.userId = userId;
@@ -46,7 +46,7 @@ public class TieComment implements Serializable {
         this.userId = userId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(String commentId) {
         this.commentId = commentId;
     }
 
@@ -66,7 +66,7 @@ public class TieComment implements Serializable {
         return userId;
     }
 
-    public int getCommentId() {
+    public String getCommentId() {
         return commentId;
     }
 

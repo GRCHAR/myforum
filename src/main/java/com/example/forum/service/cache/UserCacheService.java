@@ -25,7 +25,10 @@ import java.util.Optional;
 @Service
 @CacheConfig(cacheNames = "users")
 public class UserCacheService implements IUserCacheService{
-    String TRUE = "true";
+    private static final String USER_COUNT = "user_count";
+    private static final String LOCK = "true";
+    private static final String UNLOCK = "false";
+
     @Autowired
     private UserDao userDao;
 
@@ -44,16 +47,20 @@ public class UserCacheService implements IUserCacheService{
     public User addUser(int id){
         logger.info("redis addUser:" + id);
         User user = userDao.getUser(id);
-        redisTemplate.opsForValue().set(String.valueOf(id), "true");
+        redisTemplate.opsForValue().set(String.valueOf(id), LOCK);
         return user;
     }
+
+
 
     @Override
     public boolean deleteUser(int id){
         logger.info("redis delete user:" + id);
         boolean deleted = false;
         try{
-            deleted = redisTemplate.delete(String.valueOf(id));
+            if (redisTemplate.hasKey(String.valueOf(id)) != null) {
+                deleted = redisTemplate.delete(String.valueOf(id));
+            }
         } catch (NullPointerException e){
             logger.info("redis doesn't have user:" + id);
         }
@@ -63,12 +70,12 @@ public class UserCacheService implements IUserCacheService{
 
     @Override
     public int countUser(){
-        if(redisTemplate.hasKey("user_ount")){
-            redisTemplate.opsForValue().set("user_count", "2");
-            redisTemplate.opsForValue().set("user_count_lock", "false");
+        if(redisTemplate.hasKey(USER_COUNT)){
+            redisTemplate.opsForValue().set(USER_COUNT, "2");
+            redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
         }
 
-        return Integer.parseInt((String) redisTemplate.opsForValue().get("user_count"));
+        return Integer.parseInt((String) redisTemplate.opsForValue().get(USER_COUNT));
     }
 
     @Override
@@ -76,33 +83,33 @@ public class UserCacheService implements IUserCacheService{
     public void addUserCount(){
         logger.info("addUserCount0");
         try{
-            if(!redisTemplate.hasKey("user_count")){
+            if(!redisTemplate.hasKey(USER_COUNT)){
                 logger.info("addUserCount1");
                 logger.info("addUserCount has key:user_count");
-                redisTemplate.opsForValue().set("user_count", "1");
-                redisTemplate.opsForValue().set("user_count_lock", "false");
+                redisTemplate.opsForValue().set(USER_COUNT, "1");
+                redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
             }
         } catch (NullPointerException e){
             logger.info("addUserCount2");
-            redisTemplate.opsForValue().set("user_count", "1");
-            redisTemplate.opsForValue().set("user_count_lock", "false");
+            redisTemplate.opsForValue().set(USER_COUNT, "1");
+            redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
         }
         String user_count_lock = (String) redisTemplate.opsForValue().get("user_count_lock");
         try{
-            if("false".equals(user_count_lock)){
+            if(UNLOCK.equals(user_count_lock)){
                 logger.info("addUserCount user_count_lock is false");
-                redisTemplate.opsForValue().set("user_count_lock", "true");
-                redisTemplate.opsForValue().increment("user_count", 1);
-                redisTemplate.opsForValue().set("user_count_lock", "false");
-            } else if("true".equals(user_count_lock)){
+                redisTemplate.opsForValue().set("user_count_lock", LOCK);
+                redisTemplate.opsForValue().increment(USER_COUNT, 1);
+                redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
+            } else if(LOCK.equals(user_count_lock)){
                 logger.info("addUserCount user_count_lock is true");
                 //TODO 更换为线程队列进行异步用户统计
-                while("true".equals(redisTemplate.opsForValue().get("user_count_lock"))){
+                while(LOCK.equals(redisTemplate.opsForValue().get("user_count_lock"))){
                     Thread.sleep(1000);
                 }
-                redisTemplate.opsForValue().set("user_count_lock", "true");
-                redisTemplate.opsForValue().increment("user_count", 1);
-                redisTemplate.opsForValue().set("user_count_lock", "false");
+                redisTemplate.opsForValue().set("user_count_lock", LOCK);
+                redisTemplate.opsForValue().increment(USER_COUNT, 1);
+                redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
             }
         } catch (Exception e){
             logger.error(e.getMessage());
@@ -117,17 +124,17 @@ public class UserCacheService implements IUserCacheService{
 
     @Override
     public void removeUserCount(){
-        if("false".equals(redisTemplate.opsForValue().get("user_count_lock"))){
-            redisTemplate.opsForValue().set("user_count_lock", "true");
-            redisTemplate.opsForValue().decrement("user_count", 1);
-            redisTemplate.opsForValue().set("user_count_lock", "false");
+        if(UNLOCK.equals(redisTemplate.opsForValue().get("user_count_lock"))){
+            redisTemplate.opsForValue().set("user_count_lock", LOCK);
+            redisTemplate.opsForValue().decrement(USER_COUNT, 1);
+            redisTemplate.opsForValue().set("user_count_lock", UNLOCK);
         }
     }
 
     @Override
     public boolean getUserById(int userId){
         try{
-            if(TRUE.equals(Objects.requireNonNull(redisTemplate.opsForValue().get(String.valueOf(userId))))){
+            if(LOCK.equals(Objects.requireNonNull(redisTemplate.opsForValue().get(String.valueOf(userId))))){
                 return true;
             }
         } catch (NullPointerException e){

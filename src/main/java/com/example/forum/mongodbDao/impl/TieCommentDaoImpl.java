@@ -1,7 +1,6 @@
 package com.example.forum.mongodbDao.impl;
 
 import com.example.forum.mongodbDao.TieCommentDao;
-import com.example.forum.mongodbEntity.Tie;
 import com.example.forum.mongodbEntity.TieComment;
 import com.example.forum.mongodbEntity.TieCommentVo;
 import org.slf4j.Logger;
@@ -62,7 +61,7 @@ public class TieCommentDaoImpl implements TieCommentDao {
             int localNumber = (pageNum - 1)*pageSize;
             query.limit(localNumber);
             List<TieComment> tieComments = mongoTemplate.find(query, TieComment.class);
-            int lastCommentId = tieComments.get(tieComments.size() - 1).getCommentId();
+            String lastCommentId = tieComments.get(tieComments.size() - 1).getCommentId();
             query.addCriteria(Criteria.where("_id").gt(lastCommentId));
             query.limit(pageSize);
             return mongoTemplate.find(query, TieCommentVo.class);

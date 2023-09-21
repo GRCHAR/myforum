@@ -15,7 +15,7 @@ import java.nio.channels.Channel;
 
 /** @author genghaoran */
 @Component
-@RabbitListener(queues = "upload.video")
+@RabbitListener(queues = "Queue1")
 public class Receiver {
 
   private final Logger logger = LoggerFactory.getLogger(Receiver.class);

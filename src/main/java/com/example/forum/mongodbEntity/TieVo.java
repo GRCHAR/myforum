@@ -9,38 +9,34 @@ import java.util.Date;
 /**
  * @author genghaoran
  */
-@Document(collection = "tie_comment")
-public class TieCommentVo implements Serializable {
+@Document(collection = "tie")
+public class TieVo implements Serializable {
+
 
     @Id
-    private String commentId;
-    private int tieId;
-    private int userId;
-    private String content;
+    private String tieId;
     private Date createTime;
-
-
-    public TieCommentVo(){
+    private int createUserId;
+    private String title;
+    private String content;
+    public TieVo(){
 
     }
 
-    public TieCommentVo(String commentId, int tieId, int userId, String content, Date createTime){
-        this.commentId = commentId;
-        this.tieId = tieId;
-        this.userId = userId;
+    public TieVo(String tieId, Date createTime, int createUserId, String title, String content){
         this.content = content;
         this.createTime = createTime;
+        this.tieId = tieId;
+        this.createUserId = createUserId;
+        this.title = title;
     }
 
-
-
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setCommentId(String commentId) {
-        this.commentId = commentId;
+    public void setCreateUserId(int createUserId) {
+        this.createUserId = createUserId;
     }
 
     public void setContent(String content) {
@@ -51,19 +47,19 @@ public class TieCommentVo implements Serializable {
         this.createTime = createTime;
     }
 
-    public void setTieId(int tieId) {
+    public void setTieId(String tieId) {
         this.tieId = tieId;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getTitle() {
+        return title;
     }
 
-    public String getCommentId() {
-        return commentId;
+    public int getCreateUserId() {
+        return createUserId;
     }
 
-    public int getTieId() {
+    public String getTieId() {
         return tieId;
     }
 

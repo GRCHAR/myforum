@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.sql.SQLSyntaxErrorException;
 import java.util.Date;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ForumApplicationTests {
 
     @Autowired

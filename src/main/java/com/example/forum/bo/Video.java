@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 /**
  * @author genghaoran
@@ -17,6 +18,7 @@ public class Video {
     private int userId;
     private String url;
     private String state;
+
 
     public Video(){
         this.id = 0;

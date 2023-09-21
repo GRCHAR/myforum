@@ -64,6 +64,10 @@ public class Result<T> implements Serializable {
         return new Result<T>(resultCodeMessage, data);
     }
 
+    public Result<T> newSuccess(ResultCodeMessage resultCodeMessage, T data) {
+        return new Result<T>(resultCodeMessage, data);
+    }
+
     public void setData(T data) {
         this.data = data;
     }

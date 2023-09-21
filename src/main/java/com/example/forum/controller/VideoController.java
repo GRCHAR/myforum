@@ -8,6 +8,8 @@ import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -25,6 +27,9 @@ public class VideoController {
     @Autowired
     private IVideoService videoService;
 
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public int createVideo(@RequestBody HashMap<String, String> map){
         String title = map.get("title");
@@ -36,10 +41,11 @@ public class VideoController {
             logger.error("createVideo map" + map.toString());
             return 0;
         }
-
         return videoId;
     }
 
+
+    @Transactional
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public Result<Video> getVideoInfo(@RequestParam int videoId){
         Video video = new Video();
@@ -66,6 +72,13 @@ public class VideoController {
         return Result.success(videoPageInfo.getList());
     }
 
+    @GetMapping(value = "/kafkaSend")
+    public Result<String> testKafkaSend(@RequestParam String message) {
+
+        kafkaTemplate.send("register", message);
+        logger.info("发送kafka消息成功");
+        return new Result<>("success");
+    }
 
 
 

@@ -1,6 +1,9 @@
 package com.example.forum.mongodbDao;
 
 import com.example.forum.mongodbEntity.Tie;
+import com.example.forum.mongodbEntity.TieVo;
+
+import java.util.List;
 
 /**
  * @author genghaoran
@@ -23,7 +26,9 @@ public interface TieMongoDao {
      * 更新帖子
      * @param tie 帖子对象
      */
-    void update(Tie tie);
+    void updateTie(Tie tie);
+
+
 
     /**
      * 根据ID查找帖子
@@ -32,4 +37,5 @@ public interface TieMongoDao {
      */
     Tie findTieById(int id);
 
+    List<TieVo> pageTie(int pageNum, int pageSize);
 }

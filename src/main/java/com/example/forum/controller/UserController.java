@@ -12,6 +12,7 @@ import com.example.forum.service.cache.IUserCacheService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,6 +43,8 @@ public class UserController {
 
     @Autowired
     private IUserCacheService userCacheService;
+
+
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -231,11 +234,10 @@ public class UserController {
         return Result.failure(ResultCodeMessage.SERVER_ERROR);
     }
 
-
-
-
-
-
+    @PostMapping(value = "/getList")
+    public Result<User> getUserList(@RequestBody HashMap<String, String> queryMap) {
+        return new Result<User>();
+    }
 
 
 }

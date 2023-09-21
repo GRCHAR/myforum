@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.scheduling.concurrent.ScheduledExecutorTask;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 
@@ -11,10 +12,10 @@ import java.sql.Timestamp;
  * @author genghaoran
  */
 @Document(collection = "tie")
-public class Tie {
+public class Tie implements Serializable {
 
     @Id
-    private int tieId;
+    private String tieId;
     private Timestamp createTime;
     private int createUserId;
     private String title;
@@ -32,7 +33,7 @@ public class Tie {
     }
 
 
-    public void setTieId(int tieId) {
+    public void setTieId(String tieId) {
         this.tieId = tieId;
     }
 
@@ -62,7 +63,7 @@ public class Tie {
         return content;
     }
 
-    public int getTieId() {
+    public String getTieId() {
         return tieId;
     }
 
